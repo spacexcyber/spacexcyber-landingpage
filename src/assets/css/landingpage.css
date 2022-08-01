@@ -1,0 +1,56 @@
+.bg {
+  background: url("../../static/images/bg-full.svg") no-repeat;
+  height: 6201px;
+  background-size: cover;
+}
+.bg-home {
+    background: url("../../static/images/bg-home.svg") no-repeat;
+    height: 1073px;
+    background-size: cover;
+  }
+.home {
+  height: 1073px;
+}
+.bg-spaceship-1 {
+  background: url("../../static/images/bg-spaceship-1.svg") no-repeat;
+  height: 1073px;
+  background-size: cover;
+}
+.bg-spaceship-2 {
+  background: url("../../static/images/bg-spaceship-2.svg") no-repeat;
+  height: 1073px;
+  background-size: cover;
+}
+.bg-roadmap {
+  background: url("../../static/images/bg-roadmap.svg") no-repeat;
+  height: 1073px;
+  background-size: cover;
+}
+.bg-tokenomic {
+  background: url("../../static/images/bg-tokenomic.svg") no-repeat;
+  height: 1073px;
+  background-size: cover;
+}
+.bg-partner {
+  background: url("../../static/images/bg-partner.svg") no-repeat;
+  height: 1073px;
+  background-size: cover;
+}
+.btn-win {
+  background: url("../../static/images/btn-win.png") no-repeat;
+  background-size: 100% 100%;
+  width: 156px;
+  height: 52px;
+}
+.btn-apk {
+  background: url("../../static/images/btn-apk.png") no-repeat;
+  background-size: 100% 100%;
+  width: 156px;
+  height: 52px;
+}
+.btn-mac {
+  background: url("../../static/images/btn-mac.png") no-repeat;
+  background-size: 100% 100%;
+  width: 156px;
+  height: 52px;
+}

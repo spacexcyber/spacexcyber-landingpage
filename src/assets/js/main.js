@@ -1,5 +1,4 @@
-
-
+import '../css/styles.css';
 $(document).ready(function(){
 
     // Navbar shrink function
