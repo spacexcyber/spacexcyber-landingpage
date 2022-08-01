@@ -1,53 +1,100 @@
 .bg {
   background: url("../../static/images/bg-full.svg") no-repeat;
-  height: 6201px;
+  height: 100%;
   background-size: cover;
 }
+
+.logo {
+  background: url("../../static/images/sp-logo.svg") no-repeat;
+  width: 148px;
+  height: 76px;
+}
+
+/* .cd-section {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+}
+
+.cd-section--bg-fixed {
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+.cd-section:nth-child(2) {
+  background-image: url("../../static/images/bg-home.svg")
+}
+
+.cd-section:nth-child(3) {
+  background-image: url("../../static/images/bg-spaceship-1.svg")
+}
+
+.cd-section:nth-child(4) {
+  background-image: url("../../static/images/bg-spaceship-2.svg")
+}
+.cd-section:nth-child(5) {
+  background-image: url("../../static/images/bg-roadmap.svg")
+}
+.cd-section:nth-child(6) {
+  background-image: url("../../static/images/bg-tokenomic.svg")
+}
+.cd-section:nth-child(7) {
+  background-image: url("../../static/images/bg-partner.svg")
+}
+
 .bg-home {
-    background: url("../../static/images/bg-home.svg") no-repeat;
+    background-image: url("../../static/images/bg-home.svg") no-repeat fixed;
     height: 1073px;
     background-size: cover;
   }
 .home {
   height: 1073px;
-}
+} */
 .bg-spaceship-1 {
   background: url("../../static/images/bg-spaceship-1.svg") no-repeat;
   height: 1073px;
   background-size: cover;
 }
+
 .bg-spaceship-2 {
   background: url("../../static/images/bg-spaceship-2.svg") no-repeat;
   height: 1073px;
   background-size: cover;
 }
+
 .bg-roadmap {
   background: url("../../static/images/bg-roadmap.svg") no-repeat;
   height: 1073px;
   background-size: cover;
 }
+
 .bg-tokenomic {
   background: url("../../static/images/bg-tokenomic.svg") no-repeat;
   height: 1073px;
   background-size: cover;
 }
+
 .bg-partner {
   background: url("../../static/images/bg-partner.svg") no-repeat;
   height: 1073px;
   background-size: cover;
 }
+
 .btn-win {
   background: url("../../static/images/btn-win.png") no-repeat;
   background-size: 100% 100%;
   width: 156px;
   height: 52px;
 }
+
 .btn-apk {
   background: url("../../static/images/btn-apk.png") no-repeat;
   background-size: 100% 100%;
   width: 156px;
   height: 52px;
 }
+
 .btn-mac {
   background: url("../../static/images/btn-mac.png") no-repeat;
   background-size: 100% 100%;
