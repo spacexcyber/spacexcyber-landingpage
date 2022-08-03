@@ -11293,7 +11293,7 @@ html {
 }
 
 .page-section {
-  padding: 6rem 0;
+  padding: 10rem 0;
 }
 .page-section .page-section-heading {
   font-size: 2.25rem;
@@ -11407,6 +11407,7 @@ html {
   #mainNav.navbar-shrink {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+    background: url(/static/images/bg-nav.jpg) no-repeat;
   }
   #mainNav.navbar-shrink .navbar-brand {
     font-size: 1.5em;
@@ -11429,11 +11430,6 @@ html {
   font-size: 1.5rem;
   color: #6c757d;
 }
-
-.masthead {
-  /* padding-top: calc(6rem + 250px); */
-  padding-bottom: 6rem;
-}
 .masthead .masthead-heading {
   font-size: 2.75rem;
   line-height: 2.75rem;
@@ -11446,10 +11442,6 @@ html {
 }
 
 @media (min-width: 992px) {
-  .masthead {
-    /* padding-top: calc(6rem + 275px); */
-    padding-bottom: 6rem;
-  }
   .masthead .masthead-heading {
     font-size: 4rem;
     line-height: 3.5rem;
