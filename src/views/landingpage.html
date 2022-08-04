@@ -6,16 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <title>SpaceXCyper LANDINGPAGE</title>
+  <title>SpaceXCyper</title>
   <!-- Favicon-->
   <link rel="icon" type="image/x-icon" href="/static/space-icon.png" />
-  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
     integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -24,6 +19,11 @@
   <link rel="stylesheet" href="/static/fonts/lato-font.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="/static/fonts/montserrat-font.css" crossorigin="anonymous"
     referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+  integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
 </head>
 
 <body class="bg landing-page" id="home">
@@ -40,30 +40,30 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav">
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#home">Home</a>
+            <a class="nav-link py-3 px-0 px-lg-3" data-name="home">Home</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#spaceship">spaceship</a>
+            <a class="nav-link py-3 px-0 px-lg-3" data-name="spaceship">spaceship</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#roadmap">roadmap</a>
+            <a class="nav-link py-3 px-0 px-lg-3" data-name="roadmap">roadmap</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#tokenomics">TOKENNOMICS</a>
+            <a class="nav-link py-3 px-0 px-lg-3" data-name="tokenomics">TOKENNOMICS</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded"
+            <a class="nav-link py-3 px-0 px-lg-3"
               href="https://whitepaper.spacexcyber.io" target="_blank">Whitepaper</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#marketplace">marketplace</a>
+            <a class="nav-link py-3 px-0 px-lg-3">marketplace</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <!-- Masthead-->
-  <section class="masthead text-white text-center d-flex align-items-center vh-100">
+  <section class="masthead text-white text-center d-flex align-items-center vh-100" data-snap-point>
     <div class="container d-flex align-items-center flex-column">
       <!-- Masthead Heading-->
       <h1 class="masthead-heading text-uppercase mb-0">METAVERSE UNIVERSE</h1>
@@ -88,7 +88,7 @@
       </div>
   </section>
   <!-- Spaceship Section-->
-  <section class="page-section vh-100" id="spaceship">
+  <section class="page-section vh-100" id="spaceship" data-snap-point>
     <div class="container text-white">
       <div class="title"><span class="title-border"></span><span class="title-content">What is Space<span style="color: #ff6600;">X</span>Cyber</span></div>
       <div class="row mt-5 page-section-content">
@@ -112,7 +112,7 @@
     </div>
   </section>
   <!-- roadmap Section-->
-  <section class="page-section vh-100" id="roadmap">
+  <section class="page-section vh-100" id="roadmap" data-snap-point>
     <div class="container text-white">
       <div class="title"><span class="title-border"></span><span class="title-content">ROADMAP</span></div>
       <div class="row mt-5 page-section-content">
@@ -125,14 +125,14 @@
     </div>
   </section>
   <!-- Token Section-->
-  <section class="page-section vh-100" id="tokenomics">
+  <section class="page-section vh-100" id="tokenomics" data-snap-point>
     <div class="container text-white">
       <div class="title"><span class="title-border"></span><span class="title-content">TOKENNOMICS</span></div>
       <div class="mt-5 bg-tokenomic"></div>
     </div>
   </section>
   <!-- Partner Section-->
-  <section class="page-section vh-100" id="partner">
+  <section class="page-section vh-100" id="partner" data-snap-point>
     <div class="container text-white">
       <div class="title"><span class="title-border"></span><span class="title-content">Partner and backer</span></div>
       <div class="row mt-5 page-section-content">
@@ -145,5 +145,4 @@
     </div>
   </section>
 </body>
-
-</html>
+  </html>

@@ -11372,7 +11372,7 @@ html {
   color: #ff6600;
 }
 #mainNav .navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus {
-  color: #fff;
+  color: #ff6600;
 }
 #mainNav .navbar-nav li.nav-item a.nav-link.active {
   color: #ff6600;
@@ -11397,6 +11397,9 @@ html {
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link.active {
     color: #ff6600;
+    /* padding-bottom: 0.25rem !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important; */
     /* background: #ff6600; */
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link.active:active, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
@@ -11407,7 +11410,7 @@ html {
   #mainNav.navbar-shrink {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    background: url(/static/images/bg-nav.jpg) no-repeat;
+    background: url(/static/images/bg-nav.jpg) repeat;
   }
   #mainNav.navbar-shrink .navbar-brand {
     font-size: 1.5em;
