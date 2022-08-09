@@ -20,6 +20,20 @@ const menuClick = (name) => {
 onMounted(() => {
   scrollTo();
 });
+
+/**
+ * Xử lý các vấn đề view tàu
+ */
+var ships = [{Id: 1, Name: "Alpha", SubName: "Reconnaissance,  Battleship", Description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse explicabo delectus distinctio ipsam provident! Magni non illum eius" , ImgPath: "/src/assets/images/ships/ships-raven.png", Mass: 500, Weight: 250, Speed: 300, Health: 1000, Attach: 500, Shield: 500},
+{Id: 2, Name: "Beta", SubName: "Reconnaissance,  Battleship", Description: "" , ImgPath: "/src/assets/images/ships/pngwing.com (1).png", Mass: 600, Weight: 350, Speed: 200, Health: 1500, Attach: 500, Shield: 500},
+{Id: 3, Name: "Gamma", SubName: "Reconnaissance,  Battleship", Description: "" , ImgPath: "/src/assets/images/ships/pngwing.com (2).png", Mass: 700, Weight: 150, Speed: 700, Health: 800, Attach: 400, Shield: 600},
+{Id: 4, Name: "Delta", SubName: "Reconnaissance,  Battleship", Description: "" , ImgPath: "/src/assets/images/ships/pngwing.com (3).png", Mass: 800, Weight: 450, Speed: 320, Health: 1200, Attach: 300, Shield: 500}];
+var shipActive = ref(ships[0]);
+
+const onClickShip = (event, ship) => {
+  shipActive.value = ship;
+};
+
 </script>
 
 <template>
@@ -96,27 +110,17 @@ onMounted(() => {
     </nav>
     <div class="section-container">
       <!-- Masthead-->
-      <section
-        class="
-          page-section
-          masthead
-          text-white text-center
-          d-flex
-          align-items-center
-          vh-100
-        "
-        id="home"
-      >
+      <section class="page-section masthead text-white text-center d-flex align-items-center vh-100 " id="home">
         <div class="container d-flex align-items-center flex-column">
           <!-- Masthead Heading-->
           <h1 class="masthead-heading text-uppercase mb-0">
             METAVERSE UNIVERSE
           </h1>
           <h1 class="masthead-heading text-uppercase mb-0">THE #1 SPACE MMO</h1>
-          <p class="masthead-subheading font-weight-light mb-0 mt-3">
-            <a class="btn btn-xl btn-win" href="#"> </a>
-            <a class="btn btn-xl btn-apk" href="#"> </a>
-            <a class="btn btn-xl btn-mac" href="#"> </a>
+          <p class="masthead-subheading font-weight-light mb-0">
+            <a class="btn btn-xl spx-btn btn-win" href="#"> </a>
+            <a class="btn btn-xl spx-btn btn-apk" href="#"> </a>
+            <a class="btn btn-xl spx-btn btn-mac" href="#"> </a>
           </p>
           <div class="row mt-5">
             <div class="col">
@@ -142,11 +146,11 @@ onMounted(() => {
           <div class="title">
             <span class="title-border"></span
             ><span class="title-content"
-              >What is Space<span style="color: #ff6600">X</span>Cyber</span
+              >What is Space<span class="cl-orange">X</span>Cyber</span
             >
           </div>
-          <div class="row mt-5 page-section-content">
-            <div class="col">
+          <div class="row page-what-content">
+            <div class="col what-content">
               <p class="lead">
                 SpaceX Cyber is an MMORPG built on blockchain, where players
                 control spaceships to explore, fight and win rewards.
@@ -161,19 +165,74 @@ onMounted(() => {
                 thousands of other players.
               </p>
             </div>
+            <div class="col what-ship-container">
+              <div class="what-ship-one"></div>
+            </div>
           </div>
         </div>
       </section>
       <!-- spaceship Section-->
-      <section class="page-section vh-100">
+      <section class="page-section vh-100 spaceship-overview">
         <div class="container text-white">
-          <div class="title">
-            <span class="title-border"></span
-            ><span class="title-content">SPACESHIP OVERVIEW</span>
+          <div class="section-title">
+            <div class="title">
+              <span class="title-border"></span><span class="title-content">SPACESHIP OVERVIEW</span>
+            </div>
+            <div class="sub-title fs-subtitle">
+              A SMALL SAMPLE OF THE 1000+ NFT YOU CAN FLY
+            </div>
           </div>
+          
           <div class="row mt-1 page-section-content">
-            <div class="col">
-              <p class="lead">A SMALL SAMPLE OF THE 1000+ NFT YOU CAN FLY</p>
+            <div class="ship-img-container">
+                <div class="ship-img-view">
+                  <div class="ship-image-bg" :style="{backgroundImage: 'url(' + shipActive.ImgPath + ')'}"></div>
+                </div>
+                <div class="ship-img-list">
+                  <div class="item" v-for="ship in ships" @click="onClickShip($event, ship)">
+                    <div class="ship-img-item" :style="{backgroundImage: 'url(' + ship.ImgPath + ')'}">{{ship.Name}}</div>
+                  </div>
+                </div>
+            </div>
+            <div class="ship-spec-container">
+              <div class="ship-spec-content">
+                <div class="spec-row spec-name">
+                    <div class="ship-name fs-subtitle f-uppper">{{shipActive.Name}}</div>
+                    <div class="ship-subname cl-orange f-uppper">{{shipActive.SubName}}</div>
+                </div>
+                <div class="spec-row spec-description">
+                    {{shipActive.Description}}
+                </div>
+                <div class="spec-row spec-overview">
+                    <div class="spec-detail">
+                      <div class="spec-detail-title cl-orange">MASS</div>
+                      <div class="spec-detail-numeral">{{shipActive.Mass}} t</div>
+                    </div>
+                    <div class="spec-detail">
+                      <div class="spec-detail-title cl-orange">WEIGHT</div>
+                      <div class="spec-detail-numeral">{{shipActive.Weight}} m3</div>
+                    </div>
+                    <div class="spec-detail">
+                      <div class="spec-detail-title cl-orange">SPEED</div>
+                      <div class="spec-detail-numeral">{{shipActive.Speed}} m/s</div>
+                    </div>
+                </div>
+                <div class="spec-row spec-overview">
+                    <div class="spec-detail">
+                      <div class="spec-detail-title cl-orange">HEALTH</div>
+                      <div class="spec-detail-numeral">{{shipActive.Health}}</div>
+                    </div>
+                    <div class="spec-detail">
+                      <div class="spec-detail-title cl-orange">ATTACK</div>
+                      <div class="spec-detail-numeral">{{shipActive.Attach}}</div>
+                    </div>
+                    <div class="spec-detail">
+                      <div class="spec-detail-title cl-orange">SHIELD</div>
+                      <div class="spec-detail-numeral">{{shipActive.Shield}}</div>
+                    </div>
+                </div>
+
+              </div>
             </div>
           </div>
         </div>
@@ -243,61 +302,3 @@ onMounted(() => {
     </div>
   </div>
 </template>
-
-<style scoped>
-.landing-page.bg {
-  background: url("./assets/images/bg-full.jpg") no-repeat;
-  height: 100%;
-  background-size: cover;
-}
-
-.landing-page .logo {
-  background: url("./assets/images/sp-logo.svg") no-repeat;
-  width: 148px;
-  height: 76px;
-}
-
-.landing-page .title {
-  text-transform: uppercase;
-  color: #fff;
-}
-.landing-page .title .title-border {
-  border-left: 5px solid #ff6600;
-  padding-left: 1.5rem;
-  height: 32px;
-  display: inline-block;
-}
-.landing-page .title .title-content {
-  font-size: 45px;
-}
-.landing-page .page-section-content {
-  width: 42rem;
-}
-.landing-page .bg-tokenomic {
-  background: url("./assets/images/tokenomic.png") no-repeat;
-  height: 598px;
-}
-.btn-win {
-  background: url("./assets/images/btn-win.png") no-repeat;
-  background-size: 100% 100%;
-  width: 156px;
-  height: 52px;
-}
-
-.btn-apk {
-  background: url("./assets/images/btn-apk.png") no-repeat;
-  background-size: 100% 100%;
-  width: 156px;
-  height: 52px;
-}
-
-.btn-mac {
-  background: url("./assets/images/btn-mac.png") no-repeat;
-  background-size: 100% 100%;
-  width: 156px;
-  height: 52px;
-}
-.navbar a {
-  cursor: pointer;
-}
-</style>

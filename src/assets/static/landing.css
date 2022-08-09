@@ -1,0 +1,184 @@
+.landing-page{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+.landing-page.bg {
+    background: url("../images/bg-full.jpg") no-repeat;
+    background-size: cover;
+  }
+  
+.landing-page section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+
+  .landing-page .logo {
+    background: url("../images/sp-logo.svg") no-repeat;
+    width: 148px;
+    height: 76px;
+  }
+  
+  .landing-page .title {
+    text-transform: uppercase;
+    color: #fff;
+  }
+  .landing-page .title .title-border {
+    border-left: 5px solid #ff6600;
+    padding-left: 1.5rem;
+    height: 32px;
+    display: inline-block;
+  }
+  .landing-page .title .title-content {
+    font-size: 45px;
+  }
+  .landing-page .page-section-content {
+    width: 42rem;
+  }
+  .landing-page .bg-tokenomic {
+    background: url("../images/tokenomic.png") no-repeat;
+    height: 598px;
+  }
+  .spx-btn{
+    margin: 0 12px;
+  }
+  .spx-btn.btn-win {
+    background: url("../images/btn-win.png") no-repeat;
+    background-size: 100% 100%;
+    width: 156px;
+    height: 52px;
+  }
+  
+  .spx-btn.btn-apk {
+    background: url("../images/btn-apk.png") no-repeat;
+    background-size: 100% 100%;
+    width: 156px;
+    height: 52px;
+  }
+  
+  .spx-btn.btn-mac {
+    background: url("../images/btn-mac.png") no-repeat;
+    background-size: 100% 100%;
+    width: 156px;
+    height: 52px;
+  }
+  .navbar a {
+    cursor: pointer;
+  }
+
+/* Home */
+  .page-section#home .container{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+.page-section#home .masthead-heading{
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 25px !important;
+  }
+
+  /* What */
+.what-ship-container .what-ship-one{
+  width: 450px;
+  height: 250px;
+  background-image: url(../images/ships/ships-astero.png);
+  background-repeat: no-repeat;
+  background-size: inherit;
+}
+
+  /* Spaceship overview */
+
+  .spaceship-overview .page-section-content {
+    width: 100%;
+  }
+  .spaceship-overview .page-section-content .ship-img-container{
+    width: 700px;
+  }
+  .spaceship-overview .page-section-content .ship-img-container .ship-img-view{
+ height: 350px;
+ margin-bottom: 20px;
+}
+.spaceship-overview .page-section-content .ship-img-container .ship-img-view .ship-image-bg{
+  height: 350px;
+  background-repeat: no-repeat;
+  background-size: auto 350px;
+}
+.spaceship-overview .page-section-content .ship-img-container .ship-img-list{
+ display: flex;
+}
+.spaceship-overview .page-section-content .ship-img-container .ship-img-list .item{
+  width: 160px;
+  height: 120px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.spaceship-overview .page-section-content .ship-img-container .ship-img-list .item.active{
+  border: 1px solid #ff6600;
+  border-radius: 3px;
+}
+.spaceship-overview .page-section-content .ship-img-container .ship-img-list .item:hover{
+  border: 1px solid #ff6600;
+  border-radius: 3px;
+  transform: scale(1.05);
+  color: #ff6600;
+}
+.spaceship-overview .page-section-content .ship-img-container .ship-img-list .item .ship-img-item{
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 160px 120px;
+    background-color: #78777733;
+    padding: 8px;
+}
+  .spaceship-overview .page-section-content .ship-spec-container{
+    width: 400px;
+    padding: 20px 15px;
+    background-color: #78777733;
+  }
+  .spaceship-overview .page-section-content .ship-spec-container .spec-name{
+    flex-direction: column;
+  }
+  .spaceship-overview .page-section-content .ship-spec-container .spec-name{
+    margin: 8px 15px 25px;
+  }
+  .spaceship-overview .page-section-content .ship-spec-container .spec-description{
+    margin: 5px 15px 5px;
+  }
+  .spaceship-overview .page-section-content .ship-spec-container .spec-row{
+    display: flex;
+  }
+  .spaceship-overview .page-section-content .ship-spec-container .spec-row.spec-overview{
+    justify-content: space-around;
+  }
+  .spaceship-overview .page-section-content .ship-spec-container .spec-row .spec-detail{
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    margin: 8px 15px;
+  }
+  /* Roadmap */
+
+
+  /* Token */
+
+
+  /* Partner */
+
+
+
+  /* General */
+  .fs-subtitle{
+    font-size: 22px;
+  }
+
+  .cl-orange{
+    color: #ff6600;
+  }
+  .f-uppper{
+    text-transform: uppercase;
+  }
