@@ -24,10 +24,10 @@ onMounted(() => {
 /**
  * Xử lý các vấn đề view tàu
  */
-var ships = [{Id: 1, Name: "Alpha", SubName: "Reconnaissance,  Battleship", Description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse explicabo delectus distinctio ipsam provident! Magni non illum eius" , ImgPath: "/src/assets/images/ships/ships-raven.png", Mass: 500, Weight: 250, Speed: 300, Health: 1000, Attach: 500, Shield: 500},
-{Id: 2, Name: "Beta", SubName: "Reconnaissance,  Battleship", Description: "" , ImgPath: "/src/assets/images/ships/pngwing.com (1).png", Mass: 600, Weight: 350, Speed: 200, Health: 1500, Attach: 500, Shield: 500},
-{Id: 3, Name: "Gamma", SubName: "Reconnaissance,  Battleship", Description: "" , ImgPath: "/src/assets/images/ships/pngwing.com (2).png", Mass: 700, Weight: 150, Speed: 700, Health: 800, Attach: 400, Shield: 600},
-{Id: 4, Name: "Delta", SubName: "Reconnaissance,  Battleship", Description: "" , ImgPath: "/src/assets/images/ships/pngwing.com (3).png", Mass: 800, Weight: 450, Speed: 320, Health: 1200, Attach: 300, Shield: 500}];
+var ships = [{Id: 1, Name: "Alpha", SubName: "Reconnaissance,  Battleship", Description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse explicabo delectus distinctio ipsam provident! Magni non illum eius" , ImgPath: "/ships/ships-raven.png", Mass: 500, Weight: 250, Speed: 300, Health: 1000, Attach: 500, Shield: 500},
+{Id: 2, Name: "Beta", SubName: "Reconnaissance,  Battleship", Description: "" , ImgPath: "/ships/beta.png", Mass: 600, Weight: 350, Speed: 200, Health: 1500, Attach: 500, Shield: 500},
+{Id: 3, Name: "Gamma", SubName: "Reconnaissance,  Battleship", Description: "" , ImgPath: "/ships/delta.png", Mass: 700, Weight: 150, Speed: 700, Health: 800, Attach: 400, Shield: 600},
+{Id: 4, Name: "Delta", SubName: "Reconnaissance,  Battleship", Description: "" , ImgPath: "/ships/gamma.png", Mass: 800, Weight: 450, Speed: 320, Health: 1200, Attach: 300, Shield: 500}];
 var shipActive = ref(ships[0]);
 
 const onClickShip = (event, ship) => {
@@ -67,6 +67,14 @@ const onClickShip = (event, ship) => {
                 :class="activeMenu === 'home' ? 'active' : ''"
                 @click="menuClick('home')"
                 >Home</a
+              >
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3"
+                :class="activeMenu === 'spacexcyber' ? 'active' : ''"
+                @click="menuClick('spacexcyber')"
+                >SpaceXCyber</a
               >
             </li>
             <li class="nav-item mx-0 mx-lg-1">
@@ -141,7 +149,7 @@ const onClickShip = (event, ship) => {
         </div>
       </section>
       <!-- Spaceship Section-->
-      <section class="page-section vh-100" id="spaceship">
+      <section class="page-section vh-100" id="spacexcyber">
         <div class="container text-white">
           <div class="title">
             <span class="title-border"></span
@@ -172,7 +180,7 @@ const onClickShip = (event, ship) => {
         </div>
       </section>
       <!-- spaceship Section-->
-      <section class="page-section vh-100 spaceship-overview">
+      <section class="page-section vh-100 spaceship-overview" id="spaceship">
         <div class="container text-white">
           <div class="section-title">
             <div class="title">
@@ -186,11 +194,11 @@ const onClickShip = (event, ship) => {
           <div class="row mt-1 page-section-content">
             <div class="ship-img-container">
                 <div class="ship-img-view">
-                  <div class="ship-image-bg" :style="{backgroundImage: 'url(' + shipActive.ImgPath + ')'}"></div>
+                  <div class="ship-image-bg" :style="{backgroundImage: `url(${shipActive.ImgPath})`}"></div>
                 </div>
                 <div class="ship-img-list">
-                  <div class="item" v-for="ship in ships" @click="onClickShip($event, ship)">
-                    <div class="ship-img-item" :style="{backgroundImage: 'url(' + ship.ImgPath + ')'}">{{ship.Name}}</div>
+                  <div class="item" v-for="(ship, index) in ships" @click="onClickShip($event, ship)" :key="index">
+                    <div class="ship-img-item" :style="{backgroundImage: `url(${ship.ImgPath})`}">{{ship.Name}}</div>
                   </div>
                 </div>
             </div>
