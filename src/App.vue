@@ -197,7 +197,7 @@ const onClickShip = (event, ship) => {
                   <div class="ship-image-bg" :style="{backgroundImage: `url(${shipActive.ImgPath})`}"></div>
                 </div>
                 <div class="ship-img-list">
-                  <div class="item" v-for="(ship, index) in ships" @click="onClickShip($event, ship)" :key="index">
+                  <div :class="['item', {'active': ship.Id == shipActive.Id}]" v-for="(ship, index) in ships" @click="onClickShip($event, ship)" :key="index">
                     <div class="ship-img-item" :style="{backgroundImage: `url(${ship.ImgPath})`}">{{ship.Name}}</div>
                   </div>
                 </div>
