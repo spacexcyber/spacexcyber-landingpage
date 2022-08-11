@@ -24,41 +24,40 @@ onMounted(() => {
 /**
  * Xử lý các vấn đề view tàu
  */
-var ships = [{Id: 1, Name: "Alpha", SubName: "Reconnaissance,  Battleship", Description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse explicabo delectus distinctio ipsam provident! Magni non illum eius" , ImgPath: "/ships/ships-raven.png", Mass: 500, Weight: 250, Speed: 300, Health: 1000, Attach: 500, Shield: 500},
-{Id: 2, Name: "Beta", SubName: "Reconnaissance,  Battleship", Description: "" , ImgPath: "/ships/beta.png", Mass: 600, Weight: 350, Speed: 200, Health: 1500, Attach: 500, Shield: 500},
-{Id: 3, Name: "Gamma", SubName: "Reconnaissance,  Battleship", Description: "" , ImgPath: "/ships/delta.png", Mass: 700, Weight: 150, Speed: 700, Health: 800, Attach: 400, Shield: 600},
-{Id: 4, Name: "Delta", SubName: "Reconnaissance,  Battleship", Description: "" , ImgPath: "/ships/gamma.png", Mass: 800, Weight: 450, Speed: 320, Health: 1200, Attach: 300, Shield: 500}];
+var ships = [{Id: 1, Name: "Alpha", SubName: "Reconnaissance,  Battleship", ImgPath: "/src/assets/images/ships/ship_01.svg", Description: "Alpha's advantages are high mobility and very low cost. Designed to be an investigative and combat job in any situation. Alpha is by far the most widely used battleship worldwide." , Mass: 500, Weight: 250, Speed: 300, Health: 1000, Attach: 500, Shield: 500},
+{Id: 2, Name: "Beta", SubName: "Reconnaissance,  Battleship", ImgPath: "/src/assets/images/ships/ship_02.svg", Description: "Alpha's advantages are high mobility and very low cost. Designed to be an investigative and combat job in any situation. Alpha is by far the most widely used battleship worldwide." , Mass: 600, Weight: 350, Speed: 200, Health: 1500, Attach: 500, Shield: 500},
+{Id: 3, Name: "Gamma", SubName: "Reconnaissance,  Battleship", ImgPath: "/src/assets/images/ships/ship_03.svg", Description: "Alpha's advantages are high mobility and very low cost. Designed to be an investigative and combat job in any situation. Alpha is by far the most widely used battleship worldwide." , Mass: 700, Weight: 150, Speed: 700, Health: 800, Attach: 400, Shield: 600},
+{Id: 4, Name: "Delta", SubName: "Reconnaissance,  Battleship", ImgPath: "/src/assets/images/ships/ship_04.svg", Description: "Alpha's advantages are high mobility and very low cost. Designed to be an investigative and combat job in any situation. Alpha is by far the most widely used battleship worldwide." , Mass: 800, Weight: 450, Speed: 320, Health: 1200, Attach: 300, Shield: 500}];
 var shipActive = ref(ships[0]);
 
 const onClickShip = (event, ship) => {
   shipActive.value = ship;
 };
 
+var partners = [{Id: 1, Name: 'Binance', ImgPath: "/src/assets/images/ships/binance.svg"},
+{Id: 2, Name: 'Coinall', ImgPath: "/src/assets/images/ships/coinall.svg"},
+{Id: 3, Name: 'Bybit', ImgPath: "/src/assets/images/ships/bybit.svg"},
+{Id: 4, Name: 'Okex', ImgPath: "/src/assets/images/ships/okex.svg"},
+{Id: 5, Name: 'Kucoin', ImgPath: "/src/assets/images/ships/kucoin.svg"},
+{Id: 6, Name: 'Near', ImgPath: "/src/assets/images/ships/near.svg"},
+{Id: 7, Name: 'Unity', ImgPath: "/src/assets/images/ships/unity.svg"},
+{Id: 8, Name: 'AWS', ImgPath: "/src/assets/images/ships/aws.svg"}]
 </script>
 
 <template>
+
   <div class="bg landing-page">
     <nav class="navbar navbar-expand-lg text-uppercase fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand logo" @click="menuClick('home')"></a>
         <button
-          class="
-            navbar-toggler
-            text-uppercase
-            font-weight-bold
-            text-white
-            rounded
-          "
+          class="navbar-toggler text-uppercase font-weight-bold text-white rounded"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarResponsive"
           aria-controls="navbarResponsive"
-          aria-expanded="false"
           aria-label="Toggle navigation"
-        >
-          Menu
-          <i class="fas fa-bars"></i>
-        </button>
+          aria-expanded="false"> Menu <span class="navbar-toggler-icon"></span> </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav">
             <li class="nav-item mx-0 mx-lg-1">
@@ -125,14 +124,20 @@ const onClickShip = (event, ship) => {
             METAVERSE UNIVERSE
           </h1>
           <h1 class="masthead-heading text-uppercase mb-0">THE #1 SPACE MMO</h1>
-          <p class="masthead-subheading font-weight-light mb-0">
-            <a class="btn btn-xl spx-btn btn-win" href="#"> </a>
-            <a class="btn btn-xl spx-btn btn-apk" href="#"> </a>
-            <a class="btn btn-xl spx-btn btn-mac" href="#"> </a>
-          </p>
+          <div class="masthead-subheading font-weight-light mb-0 row">
+            <div class="down-box col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+              <a class="btn btn-xl spx-btn btn-win" href="#"> </a>
+            </div>
+            <div class="down-box col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+              <a class="btn btn-xl spx-btn btn-apk" href="#"> </a>
+            </div>
+            <div class="down-box col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+              <a class="btn btn-xl spx-btn btn-mac" href="#"> </a>
+            </div>
+          </div>
           <div class="row mt-5">
             <div class="col">
-              <div class="lead" style="width: 83rem">
+              <div class="lead">
                 <div>
                   SpaceX Cyber is a special universe inspired by the theory of
                   multiple universes where many parallel universes coexist.
@@ -174,7 +179,9 @@ const onClickShip = (event, ship) => {
               </p>
             </div>
             <div class="col what-ship-container">
-              <div class="what-ship-one"></div>
+              <div class="what-ship-one ship-transfer-1"></div>
+              <div class="what-ship-two ship-transfer-2"></div>
+              <div class="what-ship-three ship-transfer-3"></div>
             </div>
           </div>
         </div>
@@ -289,7 +296,7 @@ const onClickShip = (event, ship) => {
             ><span class="title-content">Partner and backer</span>
           </div>
           <div class="row mt-5 page-section-content">
-            <div class="col">
+            <!-- <div class="col">
               <p class="lead">
                 SpaceX Cyber is an MMORPG built on blockchain, where players
                 control spaceships to explore, fight and win rewards.
@@ -303,6 +310,11 @@ const onClickShip = (event, ship) => {
                 including war, piracy, trade and exploration, with hundreds of
                 thousands of other players.
               </p>
+            </div> -->
+            <div class="partner-box col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12" v-for="(par, index) in partners" :key="index">
+              <div class="partner-box-content">
+                <div class="partner-box-img" :style="{backgroundImage: `url(${par.ImgPath})`}" :title="par.Name"></div>
+              </div>
             </div>
           </div>
         </div>

@@ -1,3 +1,23 @@
+#mainNav{
+  padding: 0px;
+}
+@media (min-width: 992px){
+  #mainNav {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    transition: padding-top 0.3s, padding-bottom 0.3s;
+}
+
+}
+@media (max-width: 992px){
+  #mainNav {
+    background-color: #2f2f2f;
+}
+
+}
+
+
+
 .landing-page{
     position: relative;
     width: 100%;
@@ -12,7 +32,8 @@
 .landing-page section{
     position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto !important;
 }
 
 
@@ -83,12 +104,57 @@
   }
 
   /* What */
+  .what-ship-container{
+    position: relative;
+  }
 .what-ship-container .what-ship-one{
-  width: 450px;
-  height: 250px;
-  background-image: url(../images/ships/ships-astero.png);
+  position: absolute;
+  top: 20px;
+  left: 250px;
+  display: block;
+  width: 480px;
+  height: 280px;
+  background-image: url(../images/ships/ships-astero_1.svg);
   background-repeat: no-repeat;
-  background-size: inherit;
+  background-size: 480px 280px;
+}
+
+.what-ship-container .ship-transfer-1{
+  animation: shipTransfer1 6s ease infinite;
+  -webkit-animation: shipTransfer1 6s ease infinite;
+
+}
+.what-ship-container .what-ship-two{
+  position: absolute;
+  top: 268px;
+  left: 450px;
+  display: block;
+  width: 180px;
+  height: 80px;
+  background-image: url(../images/ships/ships-raven_2.svg);
+  background-repeat: no-repeat;
+  background-size: 220px 100px;
+}
+.what-ship-container .ship-transfer-2{
+  animation: shipTransfer2 6s ease infinite;
+  -webkit-animation: shipTransfer2 6s ease infinite;
+
+}
+.what-ship-container .what-ship-three{
+  position: absolute;
+  top: -100px;
+  left: 275px;
+  display: block;
+  width: 250px;
+  height: 100px;
+  background-image: url(../images/ships/ships-raven_2.svg);
+  background-repeat: no-repeat;
+  background-size: 320px 150px;
+}
+.what-ship-container .ship-transfer-3{
+  animation: shipTransfer3 6s ease infinite;
+  -webkit-animation: shipTransfer3 6s ease infinite;
+
 }
 
   /* Spaceship overview */
@@ -106,7 +172,7 @@
 .spaceship-overview .page-section-content .ship-img-container .ship-img-view .ship-image-bg{
   height: 350px;
   background-repeat: no-repeat;
-  background-size: auto 350px;
+  background-size: 90% 100%;
   background-position: 50%;
 }
 .spaceship-overview .page-section-content .ship-img-container .ship-img-list{
@@ -132,9 +198,9 @@
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
-    background-size: 160px 120px;
+    background-size: 155px 120px;
     background-color: #78777733;
-    padding: 8px;
+    padding: 0px 5px;
 }
   .spaceship-overview .page-section-content .ship-spec-container{
     width: 400px;
@@ -169,6 +235,27 @@
 
 
   /* Partner */
+  #partner .page-section-content{
+    width: 100%;
+  }
+#partner .partner-box{
+  height: 170px;
+  padding: 20px;
+  
+}
+#partner .partner-box-content{
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+}
+#partner .partner-box-content .partner-box-img{
+  height: 100%;
+  width: 100%;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 
 
@@ -184,32 +271,59 @@
     text-transform: uppercase;
   }
 
-
-  .what-ship-one
-{
-    position: relative;
-    top: 0px;
-    left: 0px;
-    width: 5%;
-    display: block;
-    -webkit-animation: shipTransfer 6s ease infinite;
-}
-
-@keyframes shipTransfer
+@keyframes shipTransfer1
 {
   0% {
-    top: 0px;
-    left: 0px;
+    top: 20px;
+    left: 250px;
     transform: scale(1);
   }
   50% {
-    top: 150px;
-    left: 150px;
-    transform: scale(1.3);
+    top: 180px;
+    left: 0px;
+    transform: scale(1.4) ;
   }
   100% {
+    top: 20px;
+    left: 250px;
+    transform: scale(1);
+  }
+}
+
+@keyframes shipTransfer2
+{
+  0% {
+    top: 268px;
+    left: 450px;
+    transform: scale(1);
+  }
+  50% {
+    top: 500px;
+    left: 20px;
+    transform: scale(1.5);
+  }
+  100% {
+    top: 268px;
+    left: 450px;
+    transform: scale(1);
+  }
+}
+
+@keyframes shipTransfer3
+{
+  0% {
+    top: -100px;
+    left: 275px;
+    transform: scale(1) rotate(0);
+  }
+  50% {
     top: 0px;
     left: 0px;
-    transform: scale(1);
+    transform: scale(1.6);
+  }
+  100% {
+    top: -100px;
+    left: 275px;
+    transform: scale(1) rotate(0);
   }
 }
