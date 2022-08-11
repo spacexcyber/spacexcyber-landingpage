@@ -107,6 +107,7 @@
   height: 350px;
   background-repeat: no-repeat;
   background-size: auto 350px;
+  background-position: 50%;
 }
 .spaceship-overview .page-section-content .ship-img-container .ship-img-list{
  display: flex;
