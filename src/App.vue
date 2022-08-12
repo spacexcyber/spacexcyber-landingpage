@@ -102,6 +102,14 @@ var partners = [{Id: 1, Name: 'Binance', ImgPath: "/src/assets/images/ships/bina
             </li>
             <li class="nav-item mx-0 mx-lg-1">
               <a
+                class="nav-link py-3 px-0 "
+                :class="activeMenu === 'partner' ? 'active' : ''"
+                @click="menuClick('partner')"
+                >PARTNER AND BACKER</a
+              >
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
                 class="nav-link py-3 px-0 px-lg-3"
                 href="https://whitepaper.spacexcyber.io"
                 target="_blank"
