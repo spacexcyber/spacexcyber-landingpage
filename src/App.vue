@@ -268,7 +268,7 @@ var partners = [{Id: 1, Name: 'Binance', ImgPath: "/src/assets/images/ships/bina
             ><span class="title-content">ROADMAP</span>
           </div>
           <div class="row mt-5 page-section-content">
-            <div class="col">
+            <!-- <div class="col">
               <p class="lead">
                 SpaceX Cyber is an MMORPG built on blockchain, where players
                 control spaceships to explore, fight and win rewards.
@@ -282,6 +282,19 @@ var partners = [{Id: 1, Name: 'Binance', ImgPath: "/src/assets/images/ships/bina
                 including war, piracy, trade and exploration, with hundreds of
                 thousands of other players.
               </p>
+            </div> -->
+            <div class="roadmap-box col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2">
+              <div class="roadmap-box-container arrow_box">
+                <div class="roadmap-box-content">
+                  <div class="roadmap-box-title cl-orange">2022-Q1</div>
+                  <div class="roadmap-box-info">
+                    <div class="rbi-item">
+                      <div class="rbi-item-title"></div>
+                      <div class="rbi-item-info"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
