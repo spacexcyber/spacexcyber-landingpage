@@ -24,24 +24,24 @@ onMounted(() => {
 /**
  * Xử lý các vấn đề view tàu
  */
-var ships = [{Id: 1, Name: "Alpha", SubName: "Reconnaissance,  Battleship", ImgPath: "/src/assets/images/ships/ship_01.svg", Description: "Alpha's advantages are high mobility and very low cost. Designed to be an investigative and combat job in any situation. Alpha is by far the most widely used battleship worldwide." , Mass: 500, Weight: 250, Speed: 300, Health: 1000, Attach: 500, Shield: 500},
-{Id: 2, Name: "Beta", SubName: "Reconnaissance,  Battleship", ImgPath: "/src/assets/images/ships/ship_02.svg", Description: "Alpha's advantages are high mobility and very low cost. Designed to be an investigative and combat job in any situation. Alpha is by far the most widely used battleship worldwide." , Mass: 600, Weight: 350, Speed: 200, Health: 1500, Attach: 500, Shield: 500},
-{Id: 3, Name: "Gamma", SubName: "Reconnaissance,  Battleship", ImgPath: "/src/assets/images/ships/ship_03.svg", Description: "Alpha's advantages are high mobility and very low cost. Designed to be an investigative and combat job in any situation. Alpha is by far the most widely used battleship worldwide." , Mass: 700, Weight: 150, Speed: 700, Health: 800, Attach: 400, Shield: 600},
-{Id: 4, Name: "Delta", SubName: "Reconnaissance,  Battleship", ImgPath: "/src/assets/images/ships/ship_04.svg", Description: "Alpha's advantages are high mobility and very low cost. Designed to be an investigative and combat job in any situation. Alpha is by far the most widely used battleship worldwide." , Mass: 800, Weight: 450, Speed: 320, Health: 1200, Attach: 300, Shield: 500}];
+var ships = [{Id: 1, Name: "Alpha", SubName: "Reconnaissance,  Battleship", Class: "ship-alpha", Description: "Alpha's advantages are high mobility and very low cost. Designed to be an investigative and combat job in any situation. Alpha is by far the most widely used battleship worldwide." , Mass: 500, Weight: 250, Speed: 300, Health: 1000, Attach: 500, Shield: 500},
+{Id: 2, Name: "Beta", SubName: "Reconnaissance,  Battleship", Class: "ship-beta", Description: "Alpha's advantages are high mobility and very low cost. Designed to be an investigative and combat job in any situation. Alpha is by far the most widely used battleship worldwide." , Mass: 600, Weight: 350, Speed: 200, Health: 1500, Attach: 500, Shield: 500},
+{Id: 3, Name: "Gamma", SubName: "Reconnaissance,  Battleship", Class: "ship-gamma", Description: "Alpha's advantages are high mobility and very low cost. Designed to be an investigative and combat job in any situation. Alpha is by far the most widely used battleship worldwide." , Mass: 700, Weight: 150, Speed: 700, Health: 800, Attach: 400, Shield: 600},
+{Id: 4, Name: "Delta", SubName: "Reconnaissance,  Battleship", Class: "ship-delta", Description: "Alpha's advantages are high mobility and very low cost. Designed to be an investigative and combat job in any situation. Alpha is by far the most widely used battleship worldwide." , Mass: 800, Weight: 450, Speed: 320, Health: 1200, Attach: 300, Shield: 500}];
 var shipActive = ref(ships[0]);
 
 const onClickShip = (event, ship) => {
   shipActive.value = ship;
 };
 
-var partners = [{Id: 1, Name: 'Binance', ImgPath: "/src/assets/images/ships/binance.svg"},
-{Id: 2, Name: 'Coinall', ImgPath: "/src/assets/images/ships/coinall.svg"},
-{Id: 3, Name: 'Bybit', ImgPath: "/src/assets/images/ships/bybit.svg"},
-{Id: 4, Name: 'Okex', ImgPath: "/src/assets/images/ships/okex.svg"},
-{Id: 5, Name: 'Kucoin', ImgPath: "/src/assets/images/ships/kucoin.svg"},
-{Id: 6, Name: 'Near', ImgPath: "/src/assets/images/ships/near.svg"},
-{Id: 7, Name: 'Unity', ImgPath: "/src/assets/images/ships/unity.svg"},
-{Id: 8, Name: 'AWS', ImgPath: "/src/assets/images/ships/aws.svg"}]
+var partners = [{Id: 1, Name: 'Binance', Class: "partner-binance"},
+{Id: 2, Name: 'Coinall', Class: "partner-coinall"},
+{Id: 3, Name: 'Bybit', Class: "partner-bybit"},
+{Id: 4, Name: 'Okex', Class: "partner-okex"},
+{Id: 5, Name: 'Kucoin', Class: "partner-kucoin"},
+{Id: 6, Name: 'Near', Class: "partner-near"},
+{Id: 7, Name: 'Unity', Class: "partner-unity"},
+{Id: 8, Name: 'AWS', Class: "partner-aws"}]
 </script>
 
 <template>
@@ -209,11 +209,11 @@ var partners = [{Id: 1, Name: 'Binance', ImgPath: "/src/assets/images/ships/bina
           <div class="row mt-1 page-section-content">
             <div class="ship-img-container">
                 <div class="ship-img-view">
-                  <div class="ship-image-bg" :style="{backgroundImage: `url(${shipActive.ImgPath})`}"></div>
+                  <div :class="['ship-image-bg', shipActive.Class]"></div>
                 </div>
                 <div class="ship-img-list">
                   <div :class="['item', {'active': ship.Id == shipActive.Id}]" v-for="(ship, index) in ships" @click="onClickShip($event, ship)" :key="index">
-                    <div class="ship-img-item" :style="{backgroundImage: `url(${ship.ImgPath})`}">{{ship.Name}}</div>
+                    <div :class="['ship-img-item', ship.Class]">{{ship.Name}}</div>
                   </div>
                 </div>
             </div>
@@ -283,14 +283,129 @@ var partners = [{Id: 1, Name: 'Binance', ImgPath: "/src/assets/images/ships/bina
                 thousands of other players.
               </p>
             </div> -->
-            <div class="roadmap-box col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2">
+            <div class="roadmap-box col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
               <div class="roadmap-box-container arrow_box">
                 <div class="roadmap-box-content">
-                  <div class="roadmap-box-title cl-orange">2022-Q1</div>
+                  <div class="roadmap-box-title cl-orange">The beginning of the universe</div>
                   <div class="roadmap-box-info">
                     <div class="rbi-item">
-                      <div class="rbi-item-title"></div>
-                      <div class="rbi-item-info"></div>
+                      <div class="rbi-item-title">-</div>
+                      <div class="rbi-item-info">Story idea, NFT and game built</div>
+                    </div>
+                    <div class="rbi-item">
+                      <div class="rbi-item-title">-</div>
+                      <div class="rbi-item-info">Initialize website, create smart contract</div>
+                    </div>
+                    <div class="rbi-item">
+                      <div class="rbi-item-title">-</div>
+                      <div class="rbi-item-info">Audit the contract and KYC by ContractChecker</div>
+                    </div>
+                    <div class="rbi-item">
+                      <div class="rbi-item-title">-</div>
+                      <div class="rbi-item-info">Release testnet game version</div>
+                    </div>
+                    <div class="rbi-item">
+                      <div class="rbi-item-title">-</div>
+                      <div class="rbi-item-info">Launch the IGO on Website</div>
+                    </div>
+                    <div class="rbi-item">
+                      <div class="rbi-item-title">-</div>
+                      <div class="rbi-item-info">Launch the ILO on Website</div>
+                    </div>
+                    <div class="rbi-item">
+                      <div class="rbi-item-title">-</div>
+                      <div class="rbi-item-info">Listing on Pancakeswap</div>
+                    </div>
+                    <div class="rbi-item">
+                      <div class="rbi-item-title">-</div>
+                      <div class="rbi-item-info">Listing on Coinmarketcap and Coingecko</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="roadmap-box col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
+              <div class="roadmap-box-container arrow_box">
+                <div class="roadmap-box-content">
+                  <div class="roadmap-box-title cl-orange">Welcome new users</div>
+                  <div class="roadmap-box-info">
+                    <div class="rbi-item">
+                      <div class="rbi-item-title">-</div>
+                      <div class="rbi-item-info">Run marketing program</div>
+                    </div>
+                    <div class="rbi-item">
+                      <div class="rbi-item-title">-</div>
+                      <div class="rbi-item-info">Release Battle (PvE) features.</div>
+                    </div>
+                    <div class="rbi-item">
+                      <div class="rbi-item-title">-</div>
+                      <div class="rbi-item-info">Open NFT market</div>
+                    </div>
+                    <div class="rbi-item">
+                      <div class="rbi-item-title">-</div>
+                      <div class="rbi-item-info">Expand partnerships, run marketing programs</div>
+                    </div>
+                    <div class="rbi-item">
+                      <div class="rbi-item-title">-</div>
+                      <div class="rbi-item-info">Release PVP features.</div>
+                    </div>
+                    <div class="rbi-item">
+                      <div class="rbi-item-title">-</div>
+                      <div class="rbi-item-info">Upgrade the game (characters, equipments, features,...)</div>
+                    </div>
+                    <div class="rbi-item">
+                      <div class="rbi-item-title">-</div>
+                      <div class="rbi-item-info">CEXs listing</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="roadmap-box col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
+              <div class="roadmap-box-container arrow_box">
+                <div class="roadmap-box-content">
+                  <div class="roadmap-box-title cl-orange">Ecosystem development</div>
+                  <div class="roadmap-box-info">
+                    <div class="rbi-item">
+                      <div class="rbi-item-title">-</div>
+                      <div class="rbi-item-info">Global community events</div>
+                    </div>
+                    <div class="rbi-item">
+                      <div class="rbi-item-title">-</div>
+                      <div class="rbi-item-info">More Marketing push on Influencers, youtube channel</div>
+                    </div>
+                    <div class="rbi-item">
+                      <div class="rbi-item-title">-</div>
+                      <div class="rbi-item-info">New feature to use SXC token</div>
+                    </div>
+                    <div class="rbi-item">
+                      <div class="rbi-item-title">-</div>
+                      <div class="rbi-item-info">SpaceXCyber hackathon</div>
+                    </div>
+                    <div class="rbi-item">
+                      <div class="rbi-item-title">-</div>
+                      <div class="rbi-item-info">Contract audit by CertiK</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="roadmap-box col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
+              <div class="roadmap-box-container arrow_box">
+                <div class="roadmap-box-content">
+                  <div class="roadmap-box-title cl-orange">METAVERSE</div>
+                  <div class="roadmap-box-info">
+                    <div class="rbi-item">
+                      <div class="rbi-item-title">-</div>
+                      <div class="rbi-item-info">Launch second game</div>
+                    </div>
+                    <div class="rbi-item">
+                      <div class="rbi-item-title">-</div>
+                      <div class="rbi-item-info">Game-branded metaverse project</div>
+                    </div>
+                    <div class="rbi-item">
+                      <div class="rbi-item-title">-</div>
+                      <div class="rbi-item-info">API development for other platforms</div>
                     </div>
                   </div>
                 </div>
@@ -303,10 +418,11 @@ var partners = [{Id: 1, Name: 'Binance', ImgPath: "/src/assets/images/ships/bina
       <section class="page-section vh-100" id="tokenomics">
         <div class="container text-white">
           <div class="title">
-            <span class="title-border"></span
-            ><span class="title-content">TOKENNOMICS</span>
+            <span class="title-border"></span><span class="title-content">TOKENNOMICS</span>
           </div>
-          <div class="mt-5 bg-tokenomic"></div>
+          <div class="mt-5 tokenomic-container">
+            <div class="bg-tokenomic"></div>
+          </div>
         </div>
       </section>
       <!-- Partner Section-->
@@ -317,24 +433,9 @@ var partners = [{Id: 1, Name: 'Binance', ImgPath: "/src/assets/images/ships/bina
             ><span class="title-content">Partner and backer</span>
           </div>
           <div class="row mt-5 page-section-content">
-            <!-- <div class="col">
-              <p class="lead">
-                SpaceX Cyber is an MMORPG built on blockchain, where players
-                control spaceships to explore, fight and win rewards.
-              </p>
-              <p class="lead">
-                Experience space exploration, massive PvP and PvE battles, and a
-                thriving player economy in an ever-expanding sandbox.
-              </p>
-              <p class="lead">
-                Take part in many professions and activities in the game,
-                including war, piracy, trade and exploration, with hundreds of
-                thousands of other players.
-              </p>
-            </div> -->
             <div class="partner-box col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12" v-for="(par, index) in partners" :key="index">
               <div class="partner-box-content">
-                <div class="partner-box-img" :style="{backgroundImage: `url(${par.ImgPath})`}" :title="par.Name"></div>
+                <div :class="['partner-box-img', par.Class]" :title="par.Name"></div>
               </div>
             </div>
           </div>

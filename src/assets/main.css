@@ -33,3 +33,21 @@ a,
     padding: 0 2rem;
   }
 }
+
+::-webkit-scrollbar{
+  width: 8px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb{
+  background: rgba(224, 224, 224, 0.68);
+}
+
+::-webkit-scrollbar-track {
+
+  background: rgba(224, 224, 224, 0.4);
+}
+
+*{
+  scrollbar-width: thin;
+}

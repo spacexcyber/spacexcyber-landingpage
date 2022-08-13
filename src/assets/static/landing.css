@@ -59,10 +59,6 @@
   .landing-page .page-section-content {
     width: 42rem;
   }
-  .landing-page .bg-tokenomic {
-    background: url("../images/tokenomic.png") no-repeat;
-    height: 598px;
-  }
   .spx-btn{
     margin: 0 12px;
   }
@@ -229,38 +225,54 @@
     margin: 8px 15px;
   }
   /* Roadmap */
+  @media (min-width: 1400px){
+    #roadmap .container {
+      max-width: 1500px;
+  }
+  #roadmap .col-xxl-2_4{
+    width: 20%;
+  }
+}
 #roadmap .page-section-content{
   width: 100%;
+}
+#roadmap .page-section-content .roadmap-box-title{
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+#roadmap .page-section-content .rbi-item{
+  margin-top: 10px;
+  display: flex;
+  position: relative;
+} 
+#roadmap .page-section-content .rbi-item-title{
+  font-size: 0px;
+  width: 6px;
+  height: 6px;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 6px;
+  position: absolute;
+}
+#roadmap .page-section-content .rbi-item-info{
+  font-size: 15px;
+  /* color: #9b9b9b; */
+  margin-left: 15px;
+}
+#roadmap .roadmap-box{
+  margin-bottom: 50px;
 }
 
 #roadmap .roadmap-box-container
 {
   background-color: #78777733;
+  padding: 15px 15px 0 15px;
 }
-.arrow_box {
+#roadmap .arrow_box {
   position: relative;
 }
-/* .arrow_box:before { 
-  -ms-transform:rotate(-45deg);
-  -webkit-transform:rotate(-45deg); 
-  transform:rotate(-45deg);
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  bottom: 0;
-  right: 0px;
-}
-
-.arrow_box:before {
-  border-color: transparent;
-  border-bottom-color: #c2e1f5;
-  border-width: 16px;
-  bottom: 7px;
-  right: 7px;
-} */
-.arrow_box:before{
+#roadmap .arrow_box:before{
   content: "";
   position: absolute;
   bottom: -30px;
@@ -273,7 +285,7 @@
   transform:rotate(90deg);
 }
 
-.arrow_box:after{
+#roadmap .arrow_box:after{
   content: "";
   position: absolute;
   bottom: -30px;
@@ -281,13 +293,29 @@
   background: #78777733;
   width: 100%;
   height: 30px;
-  -webkit-clip-path: polygon(49px 0, 100% 0, 100% 100%, 49px 100%);
+  -webkit-clip-path: polygon(30px 0, 100% 0, 100% 100%, 30px 100%);
   clip-path: polygon(30px 0, 100% 0, 100% 100%, 30px 100%);
 }
 
 
   /* Token */
+  @media (min-width: 1400px){
+    #tokenomics .container {
+        max-width: 1400px;
+    }
+    }
+    
+    
+#tokenomics .tokenomic-container{
+  height: 598px;
+  overflow: auto;
+}
 
+#tokenomics .tokenomic-container .bg-tokenomic {
+  background: url("../images/tokenomic.png") no-repeat;
+  height: 100%;
+  width: 1352px;
+}
 
   /* Partner */
   #partner .page-section-content{
@@ -381,4 +409,66 @@
     left: 0px;
     transform: scale(1.6);
   }
+}
+
+
+::-webkit-scrollbar{
+  width: 12px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+  background: rgb(104, 104, 104, 0.8);
+}
+
+::-webkit-scrollbar-track {
+
+  background: rgba(224, 224, 224, 0.68);
+}
+
+*{
+  scrollbar-width: thin;
+}
+
+
+/* Ship background */
+
+.ship-alpha{
+  background-image: url("/src/assets/images/ships/ship_01.svg");
+}
+.ship-beta{
+  background-image: url("/src/assets/images/ships/ship_02.svg");
+}
+.ship-gamma{
+  background-image: url("/src/assets/images/ships/ship_03.svg");
+}
+.ship-delta{
+  background-image: url("/src/assets/images/ships/ship_04.svg");
+}
+
+/* Partner background*/
+
+.partner-binance{
+  background-image: url("/src/assets/images/ships/binance.svg");
+}
+.partner-coinall{
+  background-image: url("/src/assets/images/ships/coinall.svg");
+}
+.partner-bybit{
+  background-image: url("/src/assets/images/ships/bybit.svg");
+}
+.partner-okex{
+  background-image: url("/src/assets/images/ships/okex.svg");
+}
+.partner-kucoin{
+  background-image: url("/src/assets/images/ships/kucoin.svg");
+}
+.partner-near{
+  background-image: url("/src/assets/images/ships/near.svg");
+}
+.partner-ubity{
+  background-image: url("/src/assets/images/ships/unity.svg");
+}
+.partner-aws{
+  background-image: url("/src/assets/images/ships/aws.svg");
 }
