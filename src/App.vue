@@ -24,10 +24,10 @@ onMounted(() => {
 /**
  * Xử lý các vấn đề view tàu
  */
-var ships = [{Id: 1, Name: "Alpha", SubName: "Reconnaissance,  Battleship", Class: "ship-alpha", Description: "Alpha's advantages are high mobility and very low cost. Designed to be an investigative and combat job in any situation. Alpha is by far the most widely used battleship worldwide." , Mass: 500, Weight: 250, Speed: 300, Health: 1000, Attach: 500, Shield: 500},
-{Id: 2, Name: "Beta", SubName: "Reconnaissance,  Battleship", Class: "ship-beta", Description: "Alpha's advantages are high mobility and very low cost. Designed to be an investigative and combat job in any situation. Alpha is by far the most widely used battleship worldwide." , Mass: 600, Weight: 350, Speed: 200, Health: 1500, Attach: 500, Shield: 500},
-{Id: 3, Name: "Gamma", SubName: "Reconnaissance,  Battleship", Class: "ship-gamma", Description: "Alpha's advantages are high mobility and very low cost. Designed to be an investigative and combat job in any situation. Alpha is by far the most widely used battleship worldwide." , Mass: 700, Weight: 150, Speed: 700, Health: 800, Attach: 400, Shield: 600},
-{Id: 4, Name: "Delta", SubName: "Reconnaissance,  Battleship", Class: "ship-delta", Description: "Alpha's advantages are high mobility and very low cost. Designed to be an investigative and combat job in any situation. Alpha is by far the most widely used battleship worldwide." , Mass: 800, Weight: 450, Speed: 320, Health: 1200, Attach: 300, Shield: 500}];
+var ships = [{Id: 1, Name: "AZeus X", SubName: "Reconnaissance,  Battleship", Class: "ship-alpha", Description: "The most modern generation of spaceships. Named after the King of the gods and ruler of Mount Olympus; god of the sky, lightning, thunder, law, order and justice. Crafted by Earth Protection Organization (EPO). Equipped with the best weapons and armor, able to fight the most powerful enemies." , Mass: 500, Weight: 250, Speed: 300, Health: 1000, Attach: 500, Shield: 500},
+{Id: 2, Name: "Poseidon VII", SubName: "Reconnaissance,  Battleship", Class: "ship-beta", Description: "The 7th generation spaceship. Named after the god of the seas. Equipped with supersonic jet engines and powerful weapons, it is easy to fight large numbers of enemies." , Mass: 600, Weight: 350, Speed: 200, Health: 1500, Attach: 500, Shield: 500},
+{Id: 3, Name: "Ares V", SubName: "Reconnaissance,  Battleship", Class: "ship-gamma", Description: "Equipped with medium firepower. But this is a generation of spacecraft built for special missions. Named after the god of war, this spaceship is a nightmare for enemies across the galaxy." , Mass: 700, Weight: 150, Speed: 700, Health: 800, Attach: 400, Shield: 600},
+{Id: 4, Name: "Athena III", SubName: "Reconnaissance,  Battleship", Class: "ship-delta", Description: "The 3rd generation spacecraft was built by the Earth Defense Organization. Named after the goddess of wisdom. This is a generation of spaceships that are improved in engines and weapons compared to the first generation. Spaceships are mass-produced to protect the earth." , Mass: 800, Weight: 450, Speed: 320, Health: 1200, Attach: 300, Shield: 500}];
 var shipActive = ref(ships[0]);
 
 const onClickShip = (event, ship) => {
@@ -207,17 +207,17 @@ var partners = [{Id: 1, Name: 'Binance', Class: "partner-binance"},
           </div>
           
           <div class="row mt-1 page-section-content">
-            <div class="ship-img-container">
+            <div class="ship-img-container col-12 col-sm-12 col-md-12 col-lg-12 col-xl-8 col-xxl-7 p-0">
                 <div class="ship-img-view">
                   <div :class="['ship-image-bg', shipActive.Class]"></div>
                 </div>
                 <div class="ship-img-list">
                   <div :class="['item', {'active': ship.Id == shipActive.Id}]" v-for="(ship, index) in ships" @click="onClickShip($event, ship)" :key="index">
-                    <div :class="['ship-img-item', ship.Class]">{{ship.Name}}</div>
+                    <div :class="['ship-img-item', ship.Class]" :title="ship.Name"></div>
                   </div>
                 </div>
             </div>
-            <div class="ship-spec-container">
+            <div class="ship-spec-container col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4">
               <div class="ship-spec-content">
                 <div class="spec-row spec-name">
                     <div class="ship-name fs-subtitle f-uppper">{{shipActive.Name}}</div>

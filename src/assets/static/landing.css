@@ -28,6 +28,16 @@
     background: url("../images/bg-full.jpg") no-repeat;
     background-size: cover;
   }
+
+  
+  @media (max-width: 576px) {
+    .landing-page.bg{
+      background-position: center;
+    }
+    .landing-page .title .title-content{
+      font-size: 40px !important;
+    }
+   }
   
 .landing-page section{
     position: relative;
@@ -87,22 +97,36 @@
   }
 
 /* Home */
+@media (min-width:576px){
   .page-section#home .container{
     position: absolute;
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
+}
+  
 .page-section#home .masthead-heading{
     font-weight: 400;
     letter-spacing: 2px;
     margin-bottom: 25px !important;
   }
-
+  @media (max-width: 576px) {
+    #home .lead > div{
+      margin-bottom: 20px;
+      text-align: left;
+    }
+   }
   /* What */
   .what-ship-container{
     position: relative;
   }
+
+  @media (max-width: 1199.98px) {
+    .what-ship-container{
+      display: none;
+    }
+   }
 .what-ship-container .what-ship-one{
   position: absolute;
   top: 20px;
@@ -159,7 +183,8 @@
     width: 100%;
   }
   .spaceship-overview .page-section-content .ship-img-container{
-    width: 700px;
+    /* width: 700px; */
+    margin-bottom: 20px;
   }
   .spaceship-overview .page-section-content .ship-img-container .ship-img-view{
  height: 350px;
@@ -173,11 +198,15 @@
 }
 .spaceship-overview .page-section-content .ship-img-container .ship-img-list{
  display: flex;
+ width: 100%;
+ overflow-y: auto;
+ /* padding-bottom: 15px; */
 }
 .spaceship-overview .page-section-content .ship-img-container .ship-img-list .item{
   width: 160px;
+  min-width: 160px;
   height: 120px;
-  margin-right: 20px;
+  margin: 0px 10px;
   cursor: pointer;
 }
 .spaceship-overview .page-section-content .ship-img-container .ship-img-list .item.active{
@@ -187,7 +216,7 @@
 .spaceship-overview .page-section-content .ship-img-container .ship-img-list .item:hover{
   border: 1px solid #ff6600;
   border-radius: 3px;
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
   color: #ff6600;
 }
 .spaceship-overview .page-section-content .ship-img-container .ship-img-list .item .ship-img-item{
@@ -199,9 +228,11 @@
     padding: 0px 5px;
 }
   .spaceship-overview .page-section-content .ship-spec-container{
-    width: 400px;
+    /* width: 400px; */
     padding: 20px 15px;
     background-color: #78777733;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
   }
   .spaceship-overview .page-section-content .ship-spec-container .spec-name{
     flex-direction: column;
@@ -307,12 +338,12 @@
     
     
 #tokenomics .tokenomic-container{
-  height: 598px;
+  height: 531px;
   overflow: auto;
 }
 
 #tokenomics .tokenomic-container .bg-tokenomic {
-  background: url("../images/tokenomic.png") no-repeat;
+  background: url("../images/tokennomics.svg") no-repeat;
   height: 100%;
   width: 1352px;
 }
