@@ -369,6 +369,15 @@
   background-size: auto;
   background-repeat: no-repeat;
   background-position: center;
+  -webkit-filter: grayscale(1);    
+  filter: grayscale(1); 
+  cursor: pointer;
+  opacity: 0.5;
+}
+#partner .partner-box-content .partner-box-img:hover{
+  -webkit-filter: none;    
+  filter: none; 
+  opacity: 1;
 }
 
 
@@ -501,5 +510,11 @@
   background-image: url("/src/assets/images/ships/unity.svg");
 }
 .partner-aws{
+  background-image: url("/src/assets/images/ships/aws.svg");
+}
+.partner-coinmarketcap{
+  background-image: url("/src/assets/images/ships/aws.svg");
+}
+.partner-coingecko{
   background-image: url("/src/assets/images/ships/aws.svg");
 }

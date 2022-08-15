@@ -24,7 +24,7 @@ onMounted(() => {
 /**
  * Xử lý các vấn đề view tàu
  */
-var ships = [{Id: 1, Name: "AZeus X", SubName: "Reconnaissance,  Battleship", Class: "ship-alpha", Description: "The most modern generation of spaceships. Named after the King of the gods and ruler of Mount Olympus; god of the sky, lightning, thunder, law, order and justice. Crafted by Earth Protection Organization (EPO). Equipped with the best weapons and armor, able to fight the most powerful enemies." , Mass: 500, Weight: 250, Speed: 300, Health: 1000, Attach: 500, Shield: 500},
+var ships = [{Id: 1, Name: "Zeus X", SubName: "Reconnaissance,  Battleship", Class: "ship-alpha", Description: "The most modern generation of spaceships. Named after the King of the gods and ruler of Mount Olympus; god of the sky, lightning, thunder, law, order and justice. Crafted by Earth Protection Organization (EPO). Equipped with the best weapons and armor, able to fight the most powerful enemies." , Mass: 500, Weight: 250, Speed: 300, Health: 1000, Attach: 500, Shield: 500},
 {Id: 2, Name: "Poseidon VII", SubName: "Reconnaissance,  Battleship", Class: "ship-beta", Description: "The 7th generation spaceship. Named after the god of the seas. Equipped with supersonic jet engines and powerful weapons, it is easy to fight large numbers of enemies." , Mass: 600, Weight: 350, Speed: 200, Health: 1500, Attach: 500, Shield: 500},
 {Id: 3, Name: "Ares V", SubName: "Reconnaissance,  Battleship", Class: "ship-gamma", Description: "Equipped with medium firepower. But this is a generation of spacecraft built for special missions. Named after the god of war, this spaceship is a nightmare for enemies across the galaxy." , Mass: 700, Weight: 150, Speed: 700, Health: 800, Attach: 400, Shield: 600},
 {Id: 4, Name: "Athena III", SubName: "Reconnaissance,  Battleship", Class: "ship-delta", Description: "The 3rd generation spacecraft was built by the Earth Defense Organization. Named after the goddess of wisdom. This is a generation of spaceships that are improved in engines and weapons compared to the first generation. Spaceships are mass-produced to protect the earth." , Mass: 800, Weight: 450, Speed: 320, Health: 1200, Attach: 300, Shield: 500}];
@@ -35,13 +35,9 @@ const onClickShip = (event, ship) => {
 };
 
 var partners = [{Id: 1, Name: 'Binance', Class: "partner-binance"},
-{Id: 2, Name: 'Coinall', Class: "partner-coinall"},
-{Id: 3, Name: 'Bybit', Class: "partner-bybit"},
-{Id: 4, Name: 'Okex', Class: "partner-okex"},
-{Id: 5, Name: 'Kucoin', Class: "partner-kucoin"},
-{Id: 6, Name: 'Near', Class: "partner-near"},
-{Id: 7, Name: 'Unity', Class: "partner-unity"},
-{Id: 8, Name: 'AWS', Class: "partner-aws"}]
+{Id: 2, Name: 'Unity', Class: "partner-unity"},
+{Id: 3, Name: 'CoinMarketCap', Class: "partner-coinmarketcap"},
+{Id: 4, Name: 'CoinGecko', Class: "partner-coingecko"}]
 </script>
 
 <template>
@@ -105,7 +101,7 @@ var partners = [{Id: 1, Name: 'Binance', Class: "partner-binance"},
                 class="nav-link py-3 px-0 "
                 :class="activeMenu === 'partner' ? 'active' : ''"
                 @click="menuClick('partner')"
-                >PARTNER AND BACKER</a
+                >PARTNER</a
               >
             </li>
             <li class="nav-item mx-0 mx-lg-1">
@@ -430,7 +426,7 @@ var partners = [{Id: 1, Name: 'Binance', Class: "partner-binance"},
         <div class="container text-white">
           <div class="title">
             <span class="title-border"></span
-            ><span class="title-content">Partner and backer</span>
+            ><span class="title-content">Partner</span>
           </div>
           <div class="row mt-5 page-section-content">
             <div class="partner-box col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12" v-for="(par, index) in partners" :key="index">
