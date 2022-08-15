@@ -1,5 +1,6 @@
 <script setup>
 import { ref, getCurrentInstance, onMounted } from "vue";
+import { vue3dLoader } from "vue-3d-loader";
 
 const activeIndex = ref("1");
 const { proxy } = getCurrentInstance();
@@ -37,7 +38,10 @@ const onClickShip = (event, ship) => {
 var partners = [{Id: 1, Name: 'Binance', Class: "partner-binance"},
 {Id: 2, Name: 'Unity', Class: "partner-unity"},
 {Id: 3, Name: 'CoinMarketCap', Class: "partner-coinmarketcap"},
-{Id: 4, Name: 'CoinGecko', Class: "partner-coingecko"}]
+{Id: 4, Name: 'CoinGecko', Class: "partner-coingecko"}];
+
+
+
 </script>
 
 <template>
@@ -205,7 +209,16 @@ var partners = [{Id: 1, Name: 'Binance', Class: "partner-binance"},
           <div class="row mt-1 page-section-content">
             <div class="ship-img-container col-12 col-sm-12 col-md-12 col-lg-12 col-xl-8 col-xxl-7 p-0">
                 <div class="ship-img-view">
-                  <div :class="['ship-image-bg', shipActive.Class]"></div>
+                  <!-- <div :class="['ship-image-bg', shipActive.Class]"></div> -->
+                  <div class="ship-image-bg">
+                    <vue3dLoader
+                      :height="350"
+                      filePath="/src/assets/images/3d_model/ship_zeus/ship_zeus.gltf"
+                      backgroundColor="rgba(255, 255, 255, 0.2)"
+                      :backgroundAlpha="0.2"
+                    ></vue3dLoader>
+                  </div>
+                  
                 </div>
                 <div class="ship-img-list">
                   <div :class="['item', {'active': ship.Id == shipActive.Id}]" v-for="(ship, index) in ships" @click="onClickShip($event, ship)" :key="index">

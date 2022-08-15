@@ -189,12 +189,14 @@
   .spaceship-overview .page-section-content .ship-img-container .ship-img-view{
  height: 350px;
  margin-bottom: 20px;
+ margin-right: 20px;
 }
 .spaceship-overview .page-section-content .ship-img-container .ship-img-view .ship-image-bg{
   height: 350px;
-  background-repeat: no-repeat;
+
+  /* background-repeat: no-repeat;
   background-size: 90% 100%;
-  background-position: 50%;
+  background-position: 50%; */
 }
 .spaceship-overview .page-section-content .ship-img-container .ship-img-list{
  display: flex;
