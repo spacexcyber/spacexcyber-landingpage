@@ -485,17 +485,17 @@
   background-image: url("/src/assets/images/ships/ship_01.svg");
 }
 .ship-beta{
-  background-image: url("/src/assets/images/ships/ship_02.svg");
+  background-image: url("/src/assets/images/ships/ship_01.svg");
 }
 .ship-gamma{
-  background-image: url("/src/assets/images/ships/ship_03.svg");
+  background-image: url("/src/assets/images/ships/ship_01.svg");
 }
 .ship-delta{
-  background-image: url("/src/assets/images/ships/ship_04.svg");
+  background-image: url("/src/assets/images/ships/ship_01.svg");
 }
 .ship-apollo{
   
-  background-image: url("/src/assets/images/ships/ships-astero_1.svg");
+  background-image: url("/src/assets/images/ships/ship_01.svg");
 }
 /* Partner background*/
 
