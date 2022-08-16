@@ -25,10 +25,11 @@ onMounted(() => {
 /**
  * Xử lý các vấn đề view tàu
  */
-var ships = [{Id: 1, Name: "Zeus X", SubName: "Reconnaissance,  Battleship", Class: "ship-alpha", Description: "The most modern generation of spaceships. Named after the King of the gods and ruler of Mount Olympus; god of the sky, lightning, thunder, law, order and justice. Crafted by Earth Protection Organization (EPO). Equipped with the best weapons and armor, able to fight the most powerful enemies." , Mass: 500, Weight: 250, Speed: 300, Health: 1000, Attach: 500, Shield: 500},
-{Id: 2, Name: "Poseidon VII", SubName: "Reconnaissance,  Battleship", Class: "ship-beta", Description: "The 7th generation spaceship. Named after the god of the seas. Equipped with supersonic jet engines and powerful weapons, it is easy to fight large numbers of enemies." , Mass: 600, Weight: 350, Speed: 200, Health: 1500, Attach: 500, Shield: 500},
-{Id: 3, Name: "Ares V", SubName: "Reconnaissance,  Battleship", Class: "ship-gamma", Description: "Equipped with medium firepower. But this is a generation of spacecraft built for special missions. Named after the god of war, this spaceship is a nightmare for enemies across the galaxy." , Mass: 700, Weight: 150, Speed: 700, Health: 800, Attach: 400, Shield: 600},
-{Id: 4, Name: "Athena III", SubName: "Reconnaissance,  Battleship", Class: "ship-delta", Description: "The 3rd generation spacecraft was built by the Earth Defense Organization. Named after the goddess of wisdom. This is a generation of spaceships that are improved in engines and weapons compared to the first generation. Spaceships are mass-produced to protect the earth." , Mass: 800, Weight: 450, Speed: 320, Health: 1200, Attach: 300, Shield: 500}];
+var ships = [{Id: 1, Name: "Zeus X", SubName: "Legend", Class: "ship-alpha", Path3D: "/src/assets/images/3d_model/ship_zeus/ship_zeus.gltf", Description: "The most modern generation of spaceships. Named after the King of the gods and ruler of Mount Olympus; god of the sky, lightning, thunder, law, order and justice. Crafted by Earth Protection Organization (EPO). Equipped with the best weapons and armor, able to fight the most powerful enemies." , Mass: 500, Weight: 450, Speed: 16.6, Health: 200, Attach: 200, Shield: 200},
+{Id: 2, Name: "Poseidon VII", SubName: "Epic", Class: "ship-beta", Path3D: "/src/assets/images/3d_model/ship_poisedon/ship_poisedon.gltf", Description: "The 7th generation spaceship. Named after the god of the seas. Equipped with supersonic jet engines and powerful weapons, it is easy to fight large numbers of enemies." , Mass: 600, Weight: 350, Speed: 11.2, Health: 150, Attach: 180, Shield: 180},
+{Id: 3, Name: "Ares V", SubName: "Rare", Class: "ship-gamma", Path3D: "/src/assets/images/3d_model/ship_ares/ship_ares.gltf", Description: "Equipped with medium firepower. But this is a generation of spacecraft built for special missions. Named after the god of war, this spaceship is a nightmare for enemies across the galaxy." , Mass: 700, Weight: 300, Speed: 11.2, Health: 150, Attach: 150, Shield: 150},
+{Id: 4, Name: "Athena III", SubName: "Uncommon", Class: "ship-delta", Path3D: "/src/assets/images/3d_model/ship_athena/ship_athena.gltf", Description: "The 3rd generation spacecraft was built by the Earth Defense Organization. Named after the goddess of wisdom. This is a generation of spaceships that are improved in engines and weapons compared to the first generation. Spaceships are mass-produced to protect the earth." , Mass: 800, Weight: 250, Speed: 7.9, Health: 120, Attach: 150, Shield: 100},
+{Id: 5, Name: "Apollo I", SubName: "Common", Class: "ship-apollo", Path3D: "/src/assets/images/3d_model/ship_apollo/ship_apollo.gltf", Description: "The 3rd generation spacecraft was built by the Earth Defense Organization. Named after the goddess of wisdom. This is a generation of spaceships that are improved in engines and weapons compared to the first generation. Spaceships are mass-produced to protect the earth." , Mass: 800, Weight: 250, Speed: 7.9, Health: 100, Attach: 100, Shield: 100}];
 var shipActive = ref(ships[0]);
 
 const onClickShip = (event, ship) => {
@@ -213,9 +214,11 @@ var partners = [{Id: 1, Name: 'Binance', Class: "partner-binance"},
                   <div class="ship-image-bg">
                     <vue3dLoader
                       :height="350"
-                      filePath="/src/assets/images/3d_model/ship_zeus/ship_zeus.gltf"
+                      :filePath="shipActive.Path3D"
                       backgroundColor="rgba(255, 255, 255, 0.2)"
                       :backgroundAlpha="0.2"
+                      :camera-position="{x: 0,y:0,z: 0}"
+                      :rotation="{x:0.5, y:-0.5, z:0}"
                     ></vue3dLoader>
                   </div>
                   
@@ -246,7 +249,7 @@ var partners = [{Id: 1, Name: 'Binance', Class: "partner-binance"},
                     </div>
                     <div class="spec-detail">
                       <div class="spec-detail-title cl-orange">SPEED</div>
-                      <div class="spec-detail-numeral">{{shipActive.Speed}} m/s</div>
+                      <div class="spec-detail-numeral">{{shipActive.Speed}} km/s</div>
                     </div>
                 </div>
                 <div class="spec-row spec-overview">

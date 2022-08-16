@@ -181,6 +181,7 @@
 
   .spaceship-overview .page-section-content {
     width: 100%;
+    margin-left: 0px;
   }
   .spaceship-overview .page-section-content .ship-img-container{
     /* width: 700px; */
@@ -200,16 +201,20 @@
 }
 .spaceship-overview .page-section-content .ship-img-container .ship-img-list{
  display: flex;
- width: 100%;
+ /* width: 100%; */
  overflow-y: auto;
+ margin-right: 20px;
  /* padding-bottom: 15px; */
 }
 .spaceship-overview .page-section-content .ship-img-container .ship-img-list .item{
-  width: 160px;
+  /* width: 160px; */
   min-width: 160px;
   height: 120px;
-  margin: 0px 10px;
+  margin-right: 20px;
   cursor: pointer;
+}
+.spaceship-overview .page-section-content .ship-img-container .ship-img-list .item:last-child{
+  margin-right: 0px;
 }
 .spaceship-overview .page-section-content .ship-img-container .ship-img-list .item.active{
   border: 1px solid #ff6600;
@@ -353,6 +358,7 @@
   /* Partner */
   #partner .page-section-content{
     width: 100%;
+    margin-left: 0;
   }
 #partner .partner-box{
   height: 170px;
@@ -487,7 +493,10 @@
 .ship-delta{
   background-image: url("/src/assets/images/ships/ship_04.svg");
 }
-
+.ship-apollo{
+  
+  background-image: url("/src/assets/images/ships/ships-astero_1.svg");
+}
 /* Partner background*/
 
 .partner-binance{
@@ -515,8 +524,10 @@
   background-image: url("/src/assets/images/ships/aws.svg");
 }
 .partner-coinmarketcap{
-  background-image: url("/src/assets/images/ships/aws.svg");
+  background-image: url("/src/assets/images/ships/coinmarketcap.svg");
+  background-size:cover !important;
 }
 .partner-coingecko{
-  background-image: url("/src/assets/images/ships/aws.svg");
+  background-image: url("/src/assets/images/ships/coingecko.svg");
+  background-size:cover !important;
 }
