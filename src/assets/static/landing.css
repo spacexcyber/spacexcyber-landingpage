@@ -230,7 +230,7 @@
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
-    background-size: 155px 120px;
+    background-size: 160px 120px;
     background-color: #78777733;
     padding: 0px 5px;
 }
@@ -481,21 +481,21 @@
 
 /* Ship background */
 
-.ship-alpha{
-  background-image: url("/src/assets/images/ships/ship_01.svg");
-}
-.ship-beta{
-  background-image: url("/src/assets/images/ships/ship_01.svg");
-}
-.ship-gamma{
-  background-image: url("/src/assets/images/ships/ship_01.svg");
-}
-.ship-delta{
-  background-image: url("/src/assets/images/ships/ship_01.svg");
-}
 .ship-apollo{
+  background-image: url("/src/assets/images/ships/ship_apollo.png");
+}
+.ship-athena{
+  background-image: url("/src/assets/images/ships/ship_athena.png");
+}
+.ship-ares{
+  background-image: url("/src/assets/images/ships/ship_ares.png");
+}
+.ship-poseidon{
+  background-image: url("/src/assets/images/ships/ship_poseidon.png");
+}
+.ship-zeus{
   
-  background-image: url("/src/assets/images/ships/ship_01.svg");
+  background-image: url("/src/assets/images/ships/ship_zeus.png");
 }
 /* Partner background*/
 
