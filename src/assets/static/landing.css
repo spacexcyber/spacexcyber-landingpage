@@ -6,17 +6,22 @@
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     transition: padding-top 0.3s, padding-bottom 0.3s;
-}
-
+  }
 }
 @media (max-width: 992px){
   #mainNav {
     background-color: #2f2f2f;
+  }
 }
-
+#mainNav .btn-menu-bar{
+  background-color: #F5F5F5;
+  width: 20px;
+  height: 2px;
+  margin: 6px 1px;
 }
-
-
+#mainNav .small-menu-show{
+  display: block;
+}
 
 .landing-page{
     position: relative;
@@ -388,7 +393,68 @@
   opacity: 1;
 }
 
+.footer-container{
+  position: relative;
+  padding: 30px 0;
+  background-color: rgb(16 16 16 / 95%);
+}
+.footer-container .footer-box{
 
+}
+.footer-container .footer-content{
+
+}
+.footer-container .footer-content .join-title{
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 100px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+.footer-container .footer-content .social-container{
+  margin-top: 15px;
+}
+.footer-container .footer-content .social-container li{
+  margin-right: 60px;
+  margin-bottom: 15px;
+}
+.footer-container .footer-content .social-container .text-muted{
+
+}
+.footer-container .footer-content .social-container .social-ic {
+  width: 76px;
+  height: 76px;
+  background-size: contain;
+  opacity: 0.5;
+}
+.footer-container .footer-content .social-container .social-ic:hover {
+  opacity: 1;
+}
+
+@media (max-width: 768px){
+  .footer-container .footer-content .social-container .social-ic {
+    width: 55px;
+    height: 55px;
+  }
+}
+
+.footer-container .footer-content .footer-intro{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.5);
+  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+  margin-top: 40px;
+  margin-bottom: 25px;
+}
+.footer-container .footer-content .footer-copy-right{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
 
   /* General */
   .fs-subtitle{
@@ -530,4 +596,19 @@
 .partner-coingecko{
   background-image: url("/src/assets/images/ships/coingecko.svg");
   background-size:cover !important;
+}
+
+
+/* Footer Icon */
+.twitter-ic{
+  background-image: url('/src/assets/images/twitter.svg');
+}
+.facebook-ic{
+  background-image: url('/src/assets/images/facebook.svg');
+}
+.discord-ic{
+  background-image: url('/src/assets/images/discord.svg');
+}
+.telegram-ic{
+  background-image: url('/src/assets/images/telegram.svg');
 }

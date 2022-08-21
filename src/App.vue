@@ -1,81 +1,88 @@
 <script setup>
-import { ref, getCurrentInstance, onMounted } from "vue";
-import { vue3dLoader } from "vue-3d-loader";
+  import { ref, getCurrentInstance } from "vue";
+  import { vue3dLoader } from "vue-3d-loader";
 
-const { proxy } = getCurrentInstance();
-let activeMenu = ref("home");
-const scrollTo = (name) => {
-  const component = proxy.$el.querySelector(`#${activeMenu.value}`);
-  if (component) {
-    window.scrollTo(0, component.offsetTop);
-  }
-};
-const menuClick = (name) => {
-  activeMenu.value = name;
-  scrollTo();
-};
-onMounted(() => {
-  scrollTo();
-});
+  const { proxy } = getCurrentInstance();
+  
+  //Page event
+  let activeMenu = ref("home");
+  const scrollTo = (name) => {
+    const component = proxy.$el.querySelector(`#${activeMenu.value}`);
+    if (component) {
+      window.scrollTo(0, component.offsetTop);
+    }
+  };
+  const menuClick = (name) => {
+    activeMenu.value = name;
+    scrollTo();
+  };
+  
+  let btnSmallMenuStatus = false;
+  let smallMenuActive = ref(btnSmallMenuStatus);
+  const btnMenuSmallClick = ($event) => {
+    smallMenuActive.value = !btnSmallMenuStatus;
+    btnSmallMenuStatus = !btnSmallMenuStatus;
+  };
+
+  /**
+   * Xử lý các vấn đề view tàu
+   */
+  var ships = [
+    {Id: 1, Name: "Apollo I", SubName: "Common", Class: "ship-apollo", Path3D: "/src/assets/images/3d_model/ship_apollo/ship_apollo.gltf", Description: "The 3rd generation spacecraft was built by the Earth Defense Organization. Named after the goddess of wisdom. This is a generation of spaceships that are improved in engines and weapons compared to the first generation. Spaceships are mass-produced to protect the earth." , Mass: 800, Weight: 250, Speed: 7.9, Health: 100, Attach: 100, Shield: 100},
+    {Id: 2, Name: "Athena III", SubName: "Uncommon", Class: "ship-athena", Path3D: "/src/assets/images/3d_model/ship_athena/ship_athena.gltf", Description: "The 3rd generation spacecraft was built by the Earth Defense Organization. Named after the goddess of wisdom. This is a generation of spaceships that are improved in engines and weapons compared to the first generation. Spaceships are mass-produced to protect the earth." , Mass: 800, Weight: 250, Speed: 7.9, Health: 120, Attach: 150, Shield: 100},
+    {Id: 3, Name: "Ares V", SubName: "Rare", Class: "ship-ares", Path3D: "/src/assets/images/3d_model/ship_ares/ship_ares.gltf", Description: "Equipped with medium firepower. But this is a generation of spacecraft built for special missions. Named after the god of war, this spaceship is a nightmare for enemies across the galaxy." , Mass: 700, Weight: 300, Speed: 11.2, Health: 150, Attach: 150, Shield: 150},
+    {Id: 4, Name: "Poseidon VII", SubName: "Epic", Class: "ship-poseidon", Path3D: "/src/assets/images/3d_model/ship_poisedon/ship_poisedon.gltf", Description: "The 7th generation spaceship. Named after the god of the seas. Equipped with supersonic jet engines and powerful weapons, it is easy to fight large numbers of enemies." , Mass: 600, Weight: 350, Speed: 11.2, Health: 150, Attach: 180, Shield: 180},
+    {Id: 5, Name: "Zeus X", SubName: "Legend", Class: "ship-zeus", Path3D: "/src/assets/images/3d_model/ship_zeus/ship_zeus.gltf", Description: "The most modern generation of spaceships. Named after the King of the gods and ruler of Mount Olympus; god of the sky, lightning, thunder, law, order and justice. Crafted by Earth Protection Organization (EPO). Equipped with the best weapons and armor, able to fight the most powerful enemies." , Mass: 500, Weight: 450, Speed: 16.6, Health: 200, Attach: 200, Shield: 200}
+  ];
+  var shipActive = ref(ships[0]);
+  const position = ref();
+  position.value = [
+    { x: 0, y: 0, z: 0 },
+    { x: 100, y: 100, z: 100 },
+  ];
+  const rotation = ref();
+  rotation.value = [
+    { x: 0, y: 0, z: 0 },
+    { x: 10, y: 1, z: 1 },
+  ];
+  const lights = [
+    {
+      type: "AmbientLight",
+      color: "#fff",
+    },
+    {
+      type: "DirectionalLight",
+      position: { x: 50, y: 5, z: 50 },
+      color: "#fff",
+      intensity: 1,
+    },
+    {
+      type: "PointLight",
+      color: "#fff",
+      position: { x: 100, y: -100, z: 50 },
+      intensity: 1
+    },
+    {
+      type: "HemisphereLight",
+      skyColor: "#fff",
+      groundColor: "#000000",
+      position: { x: 200, y: -200, z: 100 }
+    }
+  ];
+  const onClickShip = (event, ship) => {
+    shipActive.value = ship;
+  };
 
 
-/**
- * Xử lý các vấn đề view tàu
- */
-var ships = [
-{Id: 1, Name: "Apollo I", SubName: "Common", Class: "ship-apollo", Path3D: "/src/assets/images/3d_model/ship_apollo/ship_apollo.gltf", Description: "The 3rd generation spacecraft was built by the Earth Defense Organization. Named after the goddess of wisdom. This is a generation of spaceships that are improved in engines and weapons compared to the first generation. Spaceships are mass-produced to protect the earth." , Mass: 800, Weight: 250, Speed: 7.9, Health: 100, Attach: 100, Shield: 100},
-{Id: 2, Name: "Athena III", SubName: "Uncommon", Class: "ship-athena", Path3D: "/src/assets/images/3d_model/ship_athena/ship_athena.gltf", Description: "The 3rd generation spacecraft was built by the Earth Defense Organization. Named after the goddess of wisdom. This is a generation of spaceships that are improved in engines and weapons compared to the first generation. Spaceships are mass-produced to protect the earth." , Mass: 800, Weight: 250, Speed: 7.9, Health: 120, Attach: 150, Shield: 100},
-{Id: 3, Name: "Ares V", SubName: "Rare", Class: "ship-ares", Path3D: "/src/assets/images/3d_model/ship_ares/ship_ares.gltf", Description: "Equipped with medium firepower. But this is a generation of spacecraft built for special missions. Named after the god of war, this spaceship is a nightmare for enemies across the galaxy." , Mass: 700, Weight: 300, Speed: 11.2, Health: 150, Attach: 150, Shield: 150},
-{Id: 4, Name: "Poseidon VII", SubName: "Epic", Class: "ship-poseidon", Path3D: "/src/assets/images/3d_model/ship_poisedon/ship_poisedon.gltf", Description: "The 7th generation spaceship. Named after the god of the seas. Equipped with supersonic jet engines and powerful weapons, it is easy to fight large numbers of enemies." , Mass: 600, Weight: 350, Speed: 11.2, Health: 150, Attach: 180, Shield: 180},
-{Id: 5, Name: "Zeus X", SubName: "Legend", Class: "ship-zeus", Path3D: "/src/assets/images/3d_model/ship_zeus/ship_zeus.gltf", Description: "The most modern generation of spaceships. Named after the King of the gods and ruler of Mount Olympus; god of the sky, lightning, thunder, law, order and justice. Crafted by Earth Protection Organization (EPO). Equipped with the best weapons and armor, able to fight the most powerful enemies." , Mass: 500, Weight: 450, Speed: 16.6, Health: 200, Attach: 200, Shield: 200}
-];
-var shipActive = ref(ships[0]);
-const position = ref();
-position.value = [
-  { x: 0, y: 0, z: 0 },
-  { x: 100, y: 100, z: 100 },
-];
-const rotation = ref();
-rotation.value = [
-  { x: 0, y: 0, z: 0 },
-  { x: 10, y: 1, z: 1 },
-];
-const lights = [
-  {
-    type: "AmbientLight",
-    color: "#fff",
-  },
-  {
-    type: "DirectionalLight",
-    position: { x: 50, y: 5, z: 50 },
-    color: "#fff",
-    intensity: 1,
-  },
-  {
-    type: "PointLight",
-    color: "#fff",
-    position: { x: 100, y: -100, z: 50 },
-    intensity: 1
-  },
-  {
-    type: "HemisphereLight",
-    skyColor: "#fff",
-    groundColor: "#000000",
-    position: { x: 200, y: -200, z: 100 }
-  }
-];
-const onClickShip = (event, ship) => {
-  shipActive.value = ship;
-};
-
-
-/**
- * Partner
- */
-var partners = [{Id: 1, Name: 'Binance', Class: "partner-binance"},
-{Id: 2, Name: 'Unity', Class: "partner-unity"},
-{Id: 3, Name: 'CoinMarketCap', Class: "partner-coinmarketcap"},
-{Id: 4, Name: 'CoinGecko', Class: "partner-coingecko"}];
+  /**
+   * Partner
+   */
+  var partners = [
+    {Id: 1, Name: 'Binance', Class: "partner-binance"},
+    {Id: 2, Name: 'Unity', Class: "partner-unity"},
+    {Id: 3, Name: 'CoinMarketCap', Class: "partner-coinmarketcap"},
+    {Id: 4, Name: 'CoinGecko', Class: "partner-coingecko"}
+  ];
 
 
 
@@ -90,12 +97,12 @@ var partners = [{Id: 1, Name: 'Binance', Class: "partner-binance"},
         <button
           class="navbar-toggler text-uppercase font-weight-bold text-white rounded"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarResponsive"
-          aria-controls="navbarResponsive"
-          aria-label="Toggle navigation"
-          aria-expanded="false" > Menu <span class="navbar-toggler-icon"></span> </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
+          @click="btnMenuSmallClick($event)"> 
+          <div class="btn-menu-bar"></div>  
+          <div class="btn-menu-bar"></div>  
+          <div class="btn-menu-bar"></div>  
+        </button>
+        <div :class="['collapse navbar-collapse',{'small-menu-show': smallMenuActive}]" id="navbarResponsive">
           <ul class="navbar-nav">
             <li class="nav-item mx-0 mx-lg-1">
               <a
@@ -491,6 +498,29 @@ var partners = [{Id: 1, Name: 'Binance', Class: "partner-binance"},
           </div>
         </div>
       </section>
+    </div>
+    <div class="footer-container">
+      <div class="footer-box container">
+        <footer class="footer-content">
+          <div class="join-title">JOIN OUR COMMUNITY</div>
+          <div class="social-container">
+            <ul class="nav list-unstyled d-flex col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
+              <li class=""><a class="text-muted" href="#twitter"><svg class="social-ic twitter-ic"></svg></a></li>
+              <li class=""><a class="text-muted" href="#facebook"><svg class="social-ic facebook-ic"></svg></a></li>
+              <li class=""><a class="text-muted" href="#discord"><svg class="social-ic discord-ic"></svg></a></li>
+              <li class=""><a class="text-muted" href="#telegram"><svg class="social-ic telegram-ic"></svg></a></li>
+            </ul>
+          </div>
+          <div class="footer-intro">
+            SpaceX Cyber is an MMORPG built on blockchain, where players control spaceships to explore, fight and win rewards. <br>
+            Experience space exploration, massive PvP and PvE battles, and a thriving player economy in an ever-expanding sandbox. <br>
+            Take part in many professions and activities in the game, including war, piracy, trade and exploration, with hundreds of thousands of other players.
+          </div>
+          <div class="footer-copy-right">
+            Copyright © 2021-2022, SpacexCyber. All Rights Reserved
+          </div>
+        </footer>
+      </div>
     </div>
   </div>
 </template>
