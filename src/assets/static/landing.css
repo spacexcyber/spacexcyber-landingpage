@@ -132,11 +132,10 @@
       display: none;
     }
    }
+
 .what-ship-container .what-ship-one{
-  position: absolute;
-  top: 20px;
-  left: 250px;
-  display: block;
+  top: -150px;
+  left: 500px;
   width: 480px;
   height: 280px;
   background-image: url(../images/ships/ships-astero_1.svg);
@@ -145,15 +144,12 @@
 }
 
 .what-ship-container .ship-transfer-1{
-  animation: shipTransfer1 6s ease infinite;
-  -webkit-animation: shipTransfer1 6s ease infinite;
-
+  animation: shipTransfer1 6s ease-out infinite;
+  -webkit-animation: shipTransfer1 6s ease-out infinite;
 }
 .what-ship-container .what-ship-two{
-  position: absolute;
-  top: 268px;
-  left: 450px;
-  display: block;
+  top: 50px;
+  left: 500px;
   width: 220px;
   height: 100px;
   background-image: url(../images/ships/ships-raven_2.svg);
@@ -161,15 +157,12 @@
   background-size: 220px 100px;
 }
 .what-ship-container .ship-transfer-2{
-  animation: shipTransfer2 6s ease infinite;
-  -webkit-animation: shipTransfer2 6s ease infinite;
-
+  animation: shipTransfer2 6s ease-out infinite;
+  -webkit-animation: shipTransfer2 6s ease-out infinite;
 }
 .what-ship-container .what-ship-three{
-  position: absolute;
-  top: -100px;
-  left: 275px;
-  display: block;
+  top: -150px;
+  left: 500px;
   width: 270px;
   height: 130px;
   background-image: url(../images/ships/ships-raven_2.svg);
@@ -177,10 +170,19 @@
   background-size: 270px 130px;
 }
 .what-ship-container .ship-transfer-3{
-  animation: shipTransfer3 6s ease infinite;
-  -webkit-animation: shipTransfer3 6s ease infinite;
+  animation: shipTransfer3 6s ease-out infinite;
+  -webkit-animation: shipTransfer3 6s ease-out infinite;
 
 }
+
+.what-ship-container .what-ship{
+  position: absolute;
+  display: block;
+  animation-iteration-count: 1 !important;
+  -webkit-animation-iteration-count: 1 !important;
+  animation-fill-mode: forwards !important;
+  -webkit-animation-fill-mode: forwards !important;
+}   
 
   /* Spaceship overview */
 
@@ -433,9 +435,16 @@
 }
 
 @media (max-width: 768px){
+  
+  .footer-container .footer-content .social-container ul.nav {
+    justify-content: space-between;
+  }
   .footer-container .footer-content .social-container .social-ic {
     width: 55px;
     height: 55px;
+  }
+  .footer-container .footer-content .social-container li{
+    margin-right: 0px;
   }
 }
 

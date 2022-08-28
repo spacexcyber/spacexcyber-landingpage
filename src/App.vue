@@ -231,9 +231,9 @@
               </p>
             </div>
             <div class="col what-ship-container">
-              <div class="what-ship-one ship-transfer-1"></div>
-              <div class="what-ship-two ship-transfer-2"></div>
-              <div class="what-ship-three ship-transfer-3"></div>
+              <div class="what-ship what-ship-one ship-transfer-1"></div>
+              <div class="what-ship what-ship-two ship-transfer-2"></div>
+              <div class="what-ship what-ship-three ship-transfer-3"></div>
             </div>
           </div>
         </div>
