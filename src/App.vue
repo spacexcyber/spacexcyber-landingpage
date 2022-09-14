@@ -505,9 +505,9 @@
           <div class="join-title">JOIN OUR COMMUNITY</div>
           <div class="social-container">
             <ul class="nav list-unstyled d-flex col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
-              <li class=""><a class="text-muted" href="#twitter" target="_blank"><svg class="social-ic twitter-ic"></svg></a></li>
+              <li class=""><a class="text-muted" href="https://twitter.com/SpaceXCyber" target="_blank"><svg class="social-ic twitter-ic"></svg></a></li>
               <li class=""><a class="text-muted" href="#facebook" target="_blank"><svg class="social-ic facebook-ic"></svg></a></li>
-              <li class=""><a class="text-muted" href="#discord" target="_blank"><svg class="social-ic discord-ic"></svg></a></li>
+              <li class=""><a class="text-muted" href="https://discord.gg/keRq8UX5" target="_blank"><svg class="social-ic discord-ic"></svg></a></li>
               <li class=""><a class="text-muted" href="https://t.me/SpaceXCyberWorld" target="_blank"><svg class="social-ic telegram-ic"></svg></a></li>
             </ul>
           </div>
